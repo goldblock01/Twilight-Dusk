@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "twilight_dusk:entity/boss_chest"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "twilight_dusk:entity/boss_chest_opened"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "twilight_dusk:entity/boss_chest_invalid"
+    }
+  ]
+}

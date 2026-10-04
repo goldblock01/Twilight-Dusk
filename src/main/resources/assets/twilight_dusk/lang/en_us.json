@@ -1,0 +1,18 @@
+{
+  "itemGroup.twilight_dusk": "Twilight: Dusk",
+  "item.twilight_dusk.phantom_ingot": "Phantom Knight Ingot",
+  "item.twilight_dusk.phantom_armor_plate": "Phantom Armor Plate",
+  "item.twilight_dusk.phantom_sword": "Phantom Knight Sword",
+  "item.twilight_dusk.phantom_pickaxe": "Phantom Knight Pickaxe",
+  "item.twilight_dusk.phantom_axe": "Phantom Knight Axe",
+  "item.twilight_dusk.fiery_axe": "Fiery Axe",
+  "item.twilight_dusk.fiery_shovel": "Fiery Shovel",
+  "item.twilight_dusk.fiery_scythe": "Fiery Scythe",
+  "block.twilight_dusk.boss_chest": "Boss Chest",
+  "commands.twilight_dusk.config.header": "Twilight Dusk config:",
+  "commands.twilight_dusk.config.line": "  %s = %s",
+  "commands.twilight_dusk.config.hint": "Change one with /twilight_dusk config <option> <true|false> - it applies right away.",
+  "commands.twilight_dusk.config.set": "Set %s to %s - applied right away.",
+  "commands.twilight_dusk.config.unknown": "Unknown option '%s'. Available: %s",
+  "commands.twilight_dusk.config.not_loaded": "The config is not loaded yet, try again in a moment."
+}

@@ -1,0 +1,18 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "github.gold_block.twilightlootr.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "github.gold_block.twilightlootr.mixin.TwilightLootrMixinPlugin",
+  "mixins": [
+    "MixinBossChestLich",
+    "MixinBossChestNaga",
+    "MixinBossChestUrGhast",
+    "MixinTFLootTables"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

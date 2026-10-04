@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "twilightforest:knightmetal_ingot"
+    },
+    {
+      "item": "twilightforest:steeleaf_ingot"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "twilight_dusk:phantom_armor_plate"
+    }
+  ],
+  "result": {
+    "item": "twilight_dusk:phantom_ingot",
+    "count": 1
+  }
+}

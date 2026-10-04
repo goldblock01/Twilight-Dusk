@@ -1,0 +1,15 @@
+{
+  "type": "twilight_dusk:fiery_tool_smelting",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": [
+          "twilight_dusk:fiery_axe",
+          "twilight_dusk:fiery_shovel",
+          "twilight_dusk:fiery_scythe"
+        ]
+      }
+    }
+  ]
+}

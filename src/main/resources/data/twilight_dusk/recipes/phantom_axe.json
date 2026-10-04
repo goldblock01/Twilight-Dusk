@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DD ",
+    "DS ",
+    " S "
+  ],
+  "key": {
+    "D": {
+      "item": "twilight_dusk:phantom_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "twilight_dusk:phantom_axe",
+    "count": 1
+  }
+}

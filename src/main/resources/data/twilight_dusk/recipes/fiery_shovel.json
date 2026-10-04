@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " B ",
+    " B "
+  ],
+  "key": {
+    "A": {
+      "item": "twilightforest:fiery_ingot"
+    },
+    "B": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "twilight_dusk:fiery_shovel",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "tag": "twilight_dusk:phantom_armor"
+  },
+  "result": "twilight_dusk:phantom_armor_plate",
+  "experience": 10.0,
+  "cookingtime": 200
+}

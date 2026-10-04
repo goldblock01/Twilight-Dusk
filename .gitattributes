@@ -1,0 +1,21 @@
+* text=auto
+
+gradlew -text
+gradlew.bat -text
+*.bat -text
+*.cmd -text
+
+*.java text eol=lf
+*.gradle text eol=lf
+*.properties text eol=lf
+*.json text eol=lf
+*.mcmeta text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+*.jar binary
+*.png binary
+*.ogg binary
+*.zip binary

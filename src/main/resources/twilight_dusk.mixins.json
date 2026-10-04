@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "github.gold_block.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "twilight_dusk.refmap.json",
+  "mixins": [
+    "InventoryDropAllMixin",
+    "PlayerScytheSweepMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

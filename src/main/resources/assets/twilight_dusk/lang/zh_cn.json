@@ -1,0 +1,18 @@
+{
+  "itemGroup.twilight_dusk": "暮色：黄昏",
+  "item.twilight_dusk.phantom_ingot": "幻影骑士金属锭",
+  "item.twilight_dusk.phantom_armor_plate": "幻影盔甲板",
+  "item.twilight_dusk.phantom_sword": "幻影骑士剑",
+  "item.twilight_dusk.phantom_pickaxe": "幻影骑士镐",
+  "item.twilight_dusk.phantom_axe": "幻影骑士斧",
+  "item.twilight_dusk.fiery_axe": "炽铁斧",
+  "item.twilight_dusk.fiery_shovel": "炽铁锹",
+  "item.twilight_dusk.fiery_scythe": "炽铁战镰",
+  "block.twilight_dusk.boss_chest": "Boss箱",
+  "commands.twilight_dusk.config.header": "Twilight Dusk 配置：",
+  "commands.twilight_dusk.config.line": "  %s = %s",
+  "commands.twilight_dusk.config.hint": "用 /twilight_dusk config <配置项> <true|false> 修改，改完立即生效。",
+  "commands.twilight_dusk.config.set": "已将 %s 设为 %s —— 已立即生效。",
+  "commands.twilight_dusk.config.unknown": "未知配置项 '%s'。可用项：%s",
+  "commands.twilight_dusk.config.not_loaded": "配置尚未加载，请稍后再试。"
+}
