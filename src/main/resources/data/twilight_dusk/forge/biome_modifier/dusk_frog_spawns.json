@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#twilight_dusk:dusk_frog_spawns",
+  "spawners": [
+    {
+      "type": "twilight_dusk:dusk_frog",
+      "weight": 10,
+      "minCount": 1,
+      "maxCount": 3
+    }
+  ]
+}

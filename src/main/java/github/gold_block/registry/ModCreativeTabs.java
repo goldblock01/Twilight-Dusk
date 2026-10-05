@@ -33,6 +33,10 @@ public class ModCreativeTabs {
                 output.accept(ModItems.KNIGHT_MEDAL.get());
                 output.accept(TLItems.BOSS_CHEST.get());
                 output.accept(TFBlocks.KEEPSAKE_CASKET.get().asItem());
+                output.accept(ModItems.DUSK_FROG_SPAWN_EGG.get());
+                output.accept(ModItems.DUSK_FROGSPAWN.get());
+                output.accept(ModItems.DUSK_TADPOLE_BUCKET.get());
+                output.accept(ModItems.MAZE_GEL.get());
             })
             .build());
 }

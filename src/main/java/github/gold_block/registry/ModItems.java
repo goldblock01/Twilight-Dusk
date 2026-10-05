@@ -14,9 +14,14 @@ import github.gold_block.item.medal.MedalItem;
 import github.gold_block.item.medal.TwilightMedalItem;
 import github.gold_block.util.FieryTier;
 import github.gold_block.util.PhantomTier;
+import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.MobBucketItem;
+import net.minecraft.world.item.PlaceOnWaterBlockItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -67,4 +72,17 @@ public class ModItems {
 
     public static final RegistryObject<Item> KNIGHT_MEDAL = ITEMS.register("knight_medal",
             () -> new KnightMedalItem(new Item.Properties().rarity(Rarity.EPIC)));
+
+    public static final RegistryObject<Item> DUSK_FROGSPAWN = ITEMS.register("dusk_frogspawn",
+            () -> new PlaceOnWaterBlockItem(ModBlocks.DUSK_FROGSPAWN.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> DUSK_TADPOLE_BUCKET = ITEMS.register("dusk_tadpole_bucket",
+            () -> new MobBucketItem(() -> ModEntities.DUSK_TADPOLE.get(), () -> Fluids.WATER,
+                    () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> DUSK_FROG_SPAWN_EGG = ITEMS.register("dusk_frog_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DUSK_FROG, 0x2E3319, 0xA7C64C, new Item.Properties()));
+
+    public static final RegistryObject<Item> MAZE_GEL = ITEMS.register("maze_gel",
+            () -> new Item(new Item.Properties()));
 }

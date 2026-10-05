@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "all": "twilight_dusk:block/dusk_frogspawn",
+    "particle": "#all"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 1.5, 16],
+      "faces": {
+        "down": { "texture": "#all", "uv": [0, 16, 16, 0], "cullface": "down" },
+        "up": { "texture": "#all", "uv": [0, 0, 16, 16] },
+        "north": { "texture": "#all", "uv": [0, 14.5, 16, 16], "cullface": "north" },
+        "south": { "texture": "#all", "uv": [0, 14.5, 16, 16], "cullface": "south" },
+        "west": { "texture": "#all", "uv": [0, 14.5, 16, 16], "cullface": "west" },
+        "east": { "texture": "#all", "uv": [0, 14.5, 16, 16], "cullface": "east" }
+      }
+    }
+  ]
+}
