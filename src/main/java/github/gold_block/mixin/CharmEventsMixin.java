@@ -1,6 +1,5 @@
 package github.gold_block.mixin;
 
-import github.gold_block.event.CasketEvents;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,14 +11,12 @@ import twilightforest.events.CharmEvents;
 public class CharmEventsMixin {
 
     @Inject(method = "charmOfKeeping(Lnet/minecraft/world/entity/player/Player;)V", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void twilight_dusk$onCharmOfKeeping(Player player, CallbackInfo ci) {
-        CasketEvents.charmOfKeeping(player);
+    private static void twilight_dusk$disableCharmOfKeeping(Player player, CallbackInfo ci) {
         ci.cancel();
     }
 
     @Inject(method = "keepsakeCasket(Lnet/minecraft/world/entity/player/Player;)V", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void twilight_dusk$onKeepsakeCasket(Player player, CallbackInfo ci) {
-        CasketEvents.keepsakeCasket(player);
+    private static void twilight_dusk$disableKeepsakeCasket(Player player, CallbackInfo ci) {
         ci.cancel();
     }
 }
