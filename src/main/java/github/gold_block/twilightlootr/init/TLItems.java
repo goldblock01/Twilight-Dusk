@@ -1,7 +1,7 @@
 package github.gold_block.twilightlootr.init;
 
 import github.gold_block.TwilightDusk;
-import net.minecraft.world.item.BlockItem;
+import github.gold_block.twilightlootr.item.BossChestItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,5 +13,5 @@ public class TLItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, TwilightDusk.MODID);
 
     public static final RegistryObject<Item> BOSS_CHEST = ITEMS.register("boss_chest",
-            () -> new BlockItem(TLBlocks.BOSS_CHEST.get(), new Item.Properties()));
+            () -> new BossChestItem(TLBlocks.BOSS_CHEST.get(), new Item.Properties()));
 }

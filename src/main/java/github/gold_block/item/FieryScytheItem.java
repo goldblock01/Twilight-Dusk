@@ -3,7 +3,7 @@ package github.gold_block.item;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import github.gold_block.util.BlockBreaker;
-import net.minecraft.ChatFormatting;
+import github.gold_block.util.Tooltips;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -29,6 +29,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 
@@ -167,10 +169,9 @@ public class FieryScytheItem extends SwordItem implements FieryTool {
         return true;
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, level, tooltip, flag);
-        tooltip.add(Component.translatable("item.twilightforest.fiery_sword.desc").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("item.twilightforest.fiery_pickaxe.desc").withStyle(ChatFormatting.GRAY));
+        Tooltips.append(this, tooltip);
     }
 }

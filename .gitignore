@@ -89,3 +89,11 @@ runs/
 !gradle-wrapper.jar
 
 .workbuddy/
+
+# 仓库只提交 src 目录：src 之外的新文件一律不纳入版本控制
+# （文件已经在版本控制里的不受影响；想放行某个新文件就在下面加一行 !/文件名）
+/*
+!/src/
+!/.gitignore
+!/.gitattributes
+!/LICENSE

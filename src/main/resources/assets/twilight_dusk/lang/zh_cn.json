@@ -21,5 +21,11 @@
   "tooltip.twilight_dusk.frigid_medal.desc": "§5- §6+1.5§5 点护甲值\n§5- §6+1§5 点盔甲韧性\n§5- 受到的冰冻伤害降低 §670%§5\n§5- 攻击时，将 §620%§5 的伤害转化为冰冻伤害\n§5- 寒冷群系中受到的伤害降低 §610%§5",
   "tooltip.twilight_dusk.knight_medal.desc": "§5- §6+3§5 点护甲值\n§5- §6+2§5 点盔甲韧性\n§5- §6+2§5 点攻击伤害\n§5- 攻击身着护甲的目标时，额外造成 §620%§5 伤害\n§5- 命中时使目标获得 §65§5 秒缓慢与 §63§5 秒虚弱",
   "tooltip.twilight_dusk.blazing_medal.desc": "§5- §6+1.5§5 点护甲值\n§5- §6+1§5 点盔甲韧性\n§5- §6+2§5 点攻击伤害\n§5- 免疫火焰伤害\n§5- 攻击着火的目标时，额外造成 §620%§5 伤害\n§5- 炎热群系中受到的伤害降低 §610%§5",
-  "block.twilight_dusk.boss_chest": "Boss箱"
+  "tooltip.twilight_dusk.fiery_axe.desc": "§5- 攻击时点燃目标 §615§5 秒\n§5- 采掘的掉落物自动烧炼",
+  "tooltip.twilight_dusk.fiery_shovel.desc": "§5- 攻击时点燃目标 §615§5 秒\n§5- 采掘的掉落物自动烧炼",
+  "tooltip.twilight_dusk.fiery_scythe.desc": "§5- 攻击时点燃目标 §615§5 秒\n§5- 采掘的掉落物自动烧炼\n§5- 更大的横扫范围与触及距离\n§5- 横扫伤害提升至 §690%",
+  "tooltip.twilight_dusk.phantom_sword.desc": "§5- 对有护甲的目标额外造成 §63§5 点魔法伤害\n§5- 死亡时不会掉落\n§5- 无法附魔消失诅咒",
+  "tooltip.twilight_dusk.phantom_pickaxe.desc": "§5- 对有护甲的目标额外造成 §62§5 点伤害\n§5- 死亡时不会掉落\n§5- 无法附魔消失诅咒",
+  "tooltip.twilight_dusk.phantom_axe.desc": "§5- 对无护甲的目标额外造成 §63§5 点伤害\n§5- 死亡时不会掉落\n§5- 无法附魔消失诅咒",
+  "block.twilight_dusk.boss_chest": "战利品箱子"
 }

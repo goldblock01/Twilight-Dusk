@@ -3,10 +3,8 @@ package github.gold_block.item.medal;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import github.gold_block.TwilightDusk;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.locale.Language;
+import github.gold_block.util.Tooltips;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,7 +17,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -75,23 +72,6 @@ public class MedalItem extends Item implements ICurioItem {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        String prefix = "tooltip." + TwilightDusk.MODID + "." + tooltipId();
-        if (Screen.hasShiftDown()) {
-            addLines(tooltip, prefix + ".desc");
-        } else {
-            tooltip.add(Component.literal(Language.getInstance().getOrDefault("tooltip." + TwilightDusk.MODID + ".hold_shift")));
-        }
-    }
-
-    protected String tooltipId() {
-        ResourceLocation key = ForgeRegistries.ITEMS.getKey(this);
-        return key == null ? "medal" : key.getPath();
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    private static void addLines(List<Component> tooltip, String key) {
-        for (String line : Language.getInstance().getOrDefault(key).split("\n")) {
-            tooltip.add(Component.literal(line));
-        }
+        Tooltips.append(this, tooltip);
     }
 }
