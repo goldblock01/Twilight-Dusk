@@ -4,7 +4,6 @@ import github.gold_block.TwilightDusk;
 import github.gold_block.item.FieryAxeItem;
 import github.gold_block.item.FieryScytheItem;
 import github.gold_block.item.FieryShovelItem;
-import github.gold_block.item.PhantomArmorPlateItem;
 import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
@@ -34,7 +33,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().rarity(RARITY)));
 
     public static final RegistryObject<Item> PHANTOM_ARMOR_PLATE = ITEMS.register("phantom_armor_plate",
-            () -> new PhantomArmorPlateItem(new Item.Properties().rarity(RARITY)));
+            () -> new Item(new Item.Properties().rarity(RARITY)));
 
     public static final RegistryObject<Item> PHANTOM_SWORD = ITEMS.register("phantom_sword",
             () -> new PhantomSwordItem(PHANTOM, 4, -2.4F, new Item.Properties().rarity(RARITY)));
