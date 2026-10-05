@@ -1,6 +1,7 @@
 package github.gold_block.registry;
 
 import github.gold_block.TwilightDusk;
+import github.gold_block.twilightlootr.init.TLItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -29,6 +30,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.FRIGID_MEDAL.get());
                 output.accept(ModItems.BLAZING_MEDAL.get());
                 output.accept(ModItems.KNIGHT_MEDAL.get());
+                output.accept(TLItems.BOSS_CHEST.get());
             })
             .build());
 }
