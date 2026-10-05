@@ -8,6 +8,11 @@ import github.gold_block.item.PhantomArmorPlateItem;
 import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
+import github.gold_block.item.medal.BlazingMedalItem;
+import github.gold_block.item.medal.FrigidMedalItem;
+import github.gold_block.item.medal.KnightMedalItem;
+import github.gold_block.item.medal.MedalItem;
+import github.gold_block.item.medal.TwilightMedalItem;
 import github.gold_block.util.FieryTier;
 import github.gold_block.util.PhantomTier;
 import net.minecraft.world.item.Item;
@@ -48,4 +53,19 @@ public class ModItems {
 
     public static final RegistryObject<Item> FIERY_SCYTHE = ITEMS.register("fiery_scythe",
             () -> new FieryScytheItem(FIERY, 5, -2.8F, new Item.Properties().fireResistant().rarity(RARITY)));
+
+    public static final RegistryObject<Item> MEDAL = ITEMS.register("medal",
+            () -> new MedalItem(new Item.Properties().rarity(RARITY)));
+
+    public static final RegistryObject<Item> TWILIGHT_MEDAL = ITEMS.register("twilight_medal",
+            () -> new TwilightMedalItem(new Item.Properties().rarity(RARITY)));
+
+    public static final RegistryObject<Item> FRIGID_MEDAL = ITEMS.register("frigid_medal",
+            () -> new FrigidMedalItem(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> BLAZING_MEDAL = ITEMS.register("blazing_medal",
+            () -> new BlazingMedalItem(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> KNIGHT_MEDAL = ITEMS.register("knight_medal",
+            () -> new KnightMedalItem(new Item.Properties().rarity(Rarity.EPIC)));
 }

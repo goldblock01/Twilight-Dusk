@@ -2,19 +2,14 @@ package github.gold_block;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.nio.file.Path;
+import java.util.List;
 
-@Mod.EventBusSubscriber(modid = TwilightDusk.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Config {
+public final class Config {
 
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
@@ -26,86 +21,15 @@ public class Config {
 
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
-    public static final Map<String, ForgeConfigSpec.BooleanValue> EDITABLE_OPTIONS;
+    private static final List<ForgeConfigSpec.BooleanValue> OPTIONS =
+            List.of(TWILIGHT_LOOTR_ENABLED, FIX_WEATHER_COMMAND);
 
-    static {
-        Map<String, ForgeConfigSpec.BooleanValue> options = new LinkedHashMap<>();
-        options.put("twilight_lootr_enabled", TWILIGHT_LOOTR_ENABLED);
-        options.put("fix_weather_command", FIX_WEATHER_COMMAND);
-        EDITABLE_OPTIONS = Collections.unmodifiableMap(options);
-    }
+    private static final Path FILE =
+            FMLPaths.CONFIGDIR.get().resolve(TwilightDusk.MODID + "-common.toml");
 
-    private static ModConfig modConfig;
-    private static long lastFileStamp = Long.MIN_VALUE;
+    private static long lastModified = Long.MIN_VALUE;
 
-    @SubscribeEvent
-    static void onLoading(final ModConfigEvent.Loading event) {
-        if (isOurConfig(event)) {
-            modConfig = event.getConfig();
-            lastFileStamp = fileStamp(modConfig);
-            TwilightDusk.LOGGER.info("Twilight Dusk config loaded from {}", modConfig.getFullPath());
-        }
-    }
-
-    @SubscribeEvent
-    static void onReloading(final ModConfigEvent.Reloading event) {
-        if (isOurConfig(event)) {
-            TwilightDusk.LOGGER.info("Twilight Dusk config reloaded, the new values are already in use");
-        }
-    }
-
-    private static boolean isOurConfig(final ModConfigEvent event) {
-        return TwilightDusk.MODID.equals(event.getConfig().getModId());
-    }
-
-    public static void reloadIfFileChanged() {
-        ModConfig current = modConfig;
-        if (current == null) {
-            return;
-        }
-        long stamp = fileStamp(current);
-        if (stamp < 0L || stamp == lastFileStamp) {
-            return;
-        }
-
-        lastFileStamp = stamp;
-        try {
-            CommentedFileConfig data = CommentedFileConfig.builder(current.getFullPath())
-                    .preserveInsertionOrder()
-                    .build();
-            data.load();
-            if (!differs(data)) {
-
-                return;
-            }
-            SPEC.acceptConfig(data);
-            SPEC.afterReload();
-            TwilightDusk.LOGGER.info("Twilight Dusk config file changed, the new values are already in use");
-        } catch (Exception e) {
-            TwilightDusk.LOGGER.warn("Could not read the Twilight Dusk config file, keeping the previous values", e);
-        }
-    }
-
-    private static boolean differs(final CommentedFileConfig data) {
-        for (ForgeConfigSpec.BooleanValue value : EDITABLE_OPTIONS.values()) {
-            Object stored = data.get(String.join(".", value.getPath()));
-            if (stored instanceof Boolean bool && !bool.equals(read(value))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static long fileStamp(final ModConfig config) {
-        try {
-            return Files.getLastModifiedTime(config.getFullPath()).toMillis();
-        } catch (IOException | RuntimeException e) {
-            return -1L;
-        }
-    }
-
-    public static boolean isLoaded() {
-        return SPEC.isLoaded();
+    private Config() {
     }
 
     public static boolean twilightLootrEnabled() {
@@ -116,8 +40,45 @@ public class Config {
         return read(FIX_WEATHER_COMMAND);
     }
 
-    private static boolean read(final ForgeConfigSpec.BooleanValue value) {
+    public static void reloadIfFileChanged() {
+        long modified = fileModifiedTime();
+        if (modified == lastModified) {
+            return;
+        }
+        lastModified = modified;
+        reload();
+    }
 
-        return SPEC.isLoaded() ? value.get() : value.getDefault();
+    private static void reload() {
+        CommentedFileConfig file = CommentedFileConfig.builder(FILE).preserveInsertionOrder().build();
+        try {
+            file.load();
+            if (!anyChanged(file)) {
+                return;
+            }
+            SPEC.acceptConfig(file);
+            SPEC.afterReload();
+        } catch (Exception ignored) {
+        }
+    }
+
+    private static boolean anyChanged(final CommentedFileConfig file) {
+        return OPTIONS.stream().anyMatch(option -> {
+            Object stored = file.get(String.join(".", option.getPath()));
+            return stored instanceof Boolean value && !value.equals(read(option));
+        });
+    }
+
+    private static long fileModifiedTime() {
+        try {
+            return Files.getLastModifiedTime(FILE).toMillis();
+        } catch (IOException | RuntimeException e) {
+            return -1L;
+        }
+    }
+
+    private static boolean read(final ForgeConfigSpec.BooleanValue option) {
+        Boolean value = SPEC.isLoaded() ? option.get() : null;
+        return value != null ? value : option.getDefault();
     }
 }

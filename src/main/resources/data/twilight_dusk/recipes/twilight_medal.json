@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DDD",
+    "ABA",
+    " D "
+  ],
+  "key": {
+    "A": "twilightforest:steeleaf_ingot",
+    "B": "minecraft:diamond",
+    "D": "twilightforest:ironwood_ingot"
+  },
+  "result": {
+    "item": "twilight_dusk:twilight_medal",
+    "count": 1
+  }
+}

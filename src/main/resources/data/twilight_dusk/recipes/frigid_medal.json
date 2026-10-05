@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DAD",
+    "DBD",
+    " C "
+  ],
+  "key": {
+    "A": "minecraft:blue_ice",
+    "B": "twilight_dusk:medal",
+    "C": "twilightforest:alpha_yeti_trophy",
+    "D": "twilightforest:alpha_yeti_fur"
+  },
+  "result": {
+    "item": "twilight_dusk:frigid_medal",
+    "count": 1
+  }
+}

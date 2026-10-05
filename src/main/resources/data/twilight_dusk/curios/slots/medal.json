@@ -1,0 +1,8 @@
+{
+  "order": 205,
+  "size": 1,
+  "icon": "twilight_dusk:slot/medal_slot",
+  "validators": [
+    "curios:tag"
+  ]
+}

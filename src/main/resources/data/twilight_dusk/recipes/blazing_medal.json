@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DAD",
+    "DBD",
+    " C "
+  ],
+  "key": {
+    "A": "minecraft:netherite_scrap",
+    "B": "twilight_dusk:medal",
+    "C": "twilightforest:trophy",
+    "D": "twilight_dusk:phantom_ingot"
+  },
+  "result": {
+    "item": "twilight_dusk:blazing_medal",
+    "count": 1
+  }
+}

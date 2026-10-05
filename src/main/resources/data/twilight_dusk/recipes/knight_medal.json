@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DAD",
+    "DBD",
+    " C "
+  ],
+  "key": {
+    "A": "twilight_dusk:phantom_armor_plate",
+    "B": "twilight_dusk:medal",
+    "C": "twilightforest:trophy",
+    "D": "twilightforest:knightmetal_ingot"
+  },
+  "result": {
+    "item": "twilight_dusk:knight_medal",
+    "count": 1
+  }
+}

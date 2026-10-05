@@ -24,6 +24,11 @@ public class ModCreativeTabs {
                 output.accept(ModItems.FIERY_AXE.get());
                 output.accept(ModItems.FIERY_SHOVEL.get());
                 output.accept(ModItems.FIERY_SCYTHE.get());
+                output.accept(ModItems.MEDAL.get());
+                output.accept(ModItems.TWILIGHT_MEDAL.get());
+                output.accept(ModItems.FRIGID_MEDAL.get());
+                output.accept(ModItems.BLAZING_MEDAL.get());
+                output.accept(ModItems.KNIGHT_MEDAL.get());
             })
             .build());
 }

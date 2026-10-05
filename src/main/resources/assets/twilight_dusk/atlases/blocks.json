@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "twilight_dusk:slot/medal_slot"
+    }
+  ]
+}
