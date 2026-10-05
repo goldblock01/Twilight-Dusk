@@ -4,6 +4,7 @@ import github.gold_block.TwilightDusk;
 import github.gold_block.registry.ModItems;
 import github.gold_block.registry.ModTags;
 import github.gold_block.util.CurioUtil;
+import github.gold_block.util.EventGuard;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -34,13 +35,15 @@ public class MedalEvents {
 
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
-        LivingEntity victim = event.getEntity();
-        if (victim.level().isClientSide()) {
-            return;
-        }
-        DamageSource source = event.getSource();
-        attack(event, victim, source);
-        defence(event, victim, source);
+        EventGuard.run(() -> {
+            LivingEntity victim = event.getEntity();
+            if (victim.level().isClientSide()) {
+                return;
+            }
+            DamageSource source = event.getSource();
+            attack(event, victim, source);
+            defence(event, victim, source);
+        });
     }
 
     private static void attack(LivingHurtEvent event, LivingEntity victim, DamageSource source) {

@@ -3,6 +3,7 @@ package github.gold_block.event;
 import github.gold_block.TwilightDusk;
 import github.gold_block.item.FieryScytheItem;
 import github.gold_block.item.FieryTool;
+import github.gold_block.util.EventGuard;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -39,32 +40,34 @@ public final class ScytheSweepEvents {
 
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
-        Attack attack = OPEN_ATTACKS.get().peek();
-        if (attack == null) {
-            return;
-        }
-        LivingEntity victim = event.getEntity();
+        EventGuard.run(() -> {
+            Attack attack = OPEN_ATTACKS.get().peek();
+            if (attack == null) {
+                return;
+            }
+            LivingEntity victim = event.getEntity();
 
-        if (victim == attack.target) {
-            return;
-        }
-        DamageSource source = event.getSource();
-        if (source.getEntity() != attack.player) {
-            return;
-        }
-        Player player = attack.player;
-        ItemStack weapon = player.getMainHandItem();
-        if (!(weapon.getItem() instanceof FieryScytheItem)) {
-            return;
-        }
+            if (victim == attack.target) {
+                return;
+            }
+            DamageSource source = event.getSource();
+            if (source.getEntity() != attack.player) {
+                return;
+            }
+            Player player = attack.player;
+            ItemStack weapon = player.getMainHandItem();
+            if (!(weapon.getItem() instanceof FieryScytheItem)) {
+                return;
+            }
 
-        float attackDamage = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE)
-                + EnchantmentHelper.getDamageBonus(weapon, victim.getMobType());
-        float fraction = FieryScytheItem.SWEEP_DAMAGE_FRACTION
-                + FieryScytheItem.SWEEPING_EDGE_FRACTION
-                * EnchantmentHelper.getEnchantmentLevel(Enchantments.SWEEPING_EDGE, player);
-        event.setAmount(attackDamage * fraction);
-        FieryTool.burn(victim);
+            float attackDamage = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE)
+                    + EnchantmentHelper.getDamageBonus(weapon, victim.getMobType());
+            float fraction = FieryScytheItem.SWEEP_DAMAGE_FRACTION
+                    + FieryScytheItem.SWEEPING_EDGE_FRACTION
+                    * EnchantmentHelper.getEnchantmentLevel(Enchantments.SWEEPING_EDGE, player);
+            event.setAmount(attackDamage * fraction);
+            FieryTool.burn(victim);
+        });
     }
 
     private record Attack(Player player, Entity target) {

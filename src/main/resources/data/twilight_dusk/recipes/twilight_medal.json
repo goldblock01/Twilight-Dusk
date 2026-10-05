@@ -7,9 +7,15 @@
     " D "
   ],
   "key": {
-    "A": "twilightforest:steeleaf_ingot",
-    "B": "minecraft:diamond",
-    "D": "twilightforest:ironwood_ingot"
+    "A": {
+      "item": "twilightforest:steeleaf_ingot"
+    },
+    "B": {
+      "item": "minecraft:diamond"
+    },
+    "D": {
+      "item": "twilightforest:ironwood_ingot"
+    }
   },
   "result": {
     "item": "twilight_dusk:twilight_medal",

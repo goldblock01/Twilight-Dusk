@@ -7,10 +7,18 @@
     " C "
   ],
   "key": {
-    "A": "minecraft:netherite_scrap",
-    "B": "twilight_dusk:medal",
-    "C": "twilightforest:trophy",
-    "D": "twilight_dusk:phantom_ingot"
+    "A": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "B": {
+      "item": "twilight_dusk:medal"
+    },
+    "C": {
+      "item": "twilightforest:hydra_trophy"
+    },
+    "D": {
+      "item": "twilight_dusk:phantom_ingot"
+    }
   },
   "result": {
     "item": "twilight_dusk:blazing_medal",

@@ -7,10 +7,18 @@
     " C "
   ],
   "key": {
-    "A": "twilight_dusk:phantom_armor_plate",
-    "B": "twilight_dusk:medal",
-    "C": "twilightforest:trophy",
-    "D": "twilightforest:knightmetal_ingot"
+    "A": {
+      "item": "twilight_dusk:phantom_armor_plate"
+    },
+    "B": {
+      "item": "twilight_dusk:medal"
+    },
+    "C": {
+      "item": "twilightforest:knight_phantom_trophy"
+    },
+    "D": {
+      "item": "twilightforest:knightmetal_ingot"
+    }
   },
   "result": {
     "item": "twilight_dusk:knight_medal",

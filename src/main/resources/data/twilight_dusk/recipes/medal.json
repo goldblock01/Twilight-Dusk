@@ -7,9 +7,15 @@
     " D "
   ],
   "key": {
-    "A": "minecraft:iron_nugget",
-    "B": "minecraft:black_dye",
-    "D": "minecraft:iron_ingot"
+    "A": {
+      "item": "minecraft:iron_nugget"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    },
+    "D": {
+      "item": "minecraft:iron_ingot"
+    }
   },
   "result": {
     "item": "twilight_dusk:medal",

@@ -2,6 +2,7 @@ package github.gold_block.event;
 
 import github.gold_block.TwilightDusk;
 import github.gold_block.registry.ModItems;
+import github.gold_block.util.EventGuard;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,29 +20,31 @@ public class ToolEvents {
 
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
-        LivingEntity target = event.getEntity();
-        if (target.level().isClientSide()) {
-            return;
-        }
+        EventGuard.run(() -> {
+            LivingEntity target = event.getEntity();
+            if (target.level().isClientSide()) {
+                return;
+            }
 
-        DamageSource source = event.getSource();
-        if (source.is(DamageTypes.MAGIC) || source.is(DamageTypes.INDIRECT_MAGIC)) {
-            return;
-        }
-        if (!(source.getDirectEntity() instanceof LivingEntity attacker)) {
-            return;
-        }
+            DamageSource source = event.getSource();
+            if (source.is(DamageTypes.MAGIC) || source.is(DamageTypes.INDIRECT_MAGIC)) {
+                return;
+            }
+            if (!(source.getDirectEntity() instanceof LivingEntity attacker)) {
+                return;
+            }
 
-        ItemStack weapon = attacker.getMainHandItem();
-        if (weapon.isEmpty()) {
-            return;
-        } else if (weapon.is(ModItems.PHANTOM_SWORD.get())) {
-            phantomSword(event, target, attacker);
-        } else if (weapon.is(ModItems.PHANTOM_PICKAXE.get())) {
-            phantomPickaxe(event, target);
-        } else if (weapon.is(ModItems.PHANTOM_AXE.get())) {
-            phantomAxe(event, target);
-        }
+            ItemStack weapon = attacker.getMainHandItem();
+            if (weapon.isEmpty()) {
+                return;
+            } else if (weapon.is(ModItems.PHANTOM_SWORD.get())) {
+                phantomSword(event, target, attacker);
+            } else if (weapon.is(ModItems.PHANTOM_PICKAXE.get())) {
+                phantomPickaxe(event, target);
+            } else if (weapon.is(ModItems.PHANTOM_AXE.get())) {
+                phantomAxe(event, target);
+            }
+        });
     }
 
     private static void phantomSword(LivingHurtEvent event, LivingEntity target, LivingEntity attacker) {

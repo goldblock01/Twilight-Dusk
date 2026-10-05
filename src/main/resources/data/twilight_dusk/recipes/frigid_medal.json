@@ -7,10 +7,18 @@
     " C "
   ],
   "key": {
-    "A": "minecraft:blue_ice",
-    "B": "twilight_dusk:medal",
-    "C": "twilightforest:alpha_yeti_trophy",
-    "D": "twilightforest:alpha_yeti_fur"
+    "A": {
+      "item": "minecraft:blue_ice"
+    },
+    "B": {
+      "item": "twilight_dusk:medal"
+    },
+    "C": {
+      "item": "twilightforest:alpha_yeti_trophy"
+    },
+    "D": {
+      "item": "twilightforest:alpha_yeti_fur"
+    }
   },
   "result": {
     "item": "twilight_dusk:frigid_medal",
