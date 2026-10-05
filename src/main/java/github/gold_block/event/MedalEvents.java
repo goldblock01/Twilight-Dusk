@@ -4,6 +4,7 @@ import github.gold_block.TwilightDusk;
 import github.gold_block.registry.ModItems;
 import github.gold_block.registry.ModTags;
 import github.gold_block.util.CurioUtil;
+import github.gold_block.util.DerivedDamageSource;
 import github.gold_block.util.EventGuard;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -41,18 +42,19 @@ public class MedalEvents {
                 return;
             }
             DamageSource source = event.getSource();
-            attack(event, victim, source);
+            if (source instanceof DerivedDamageSource) {
+                return;
+            }
+            float converted = 0.0F;
+            if (source.getDirectEntity() instanceof LivingEntity attacker && attacker != victim) {
+                converted = attack(event, victim, attacker);
+            }
             defence(event, victim, source);
+            settle(victim, source, converted);
         });
     }
 
-    private static void attack(LivingHurtEvent event, LivingEntity victim, DamageSource source) {
-        if (source.is(FROST_CONVERSION)) {
-            return;
-        }
-        if (!(source.getDirectEntity() instanceof LivingEntity attacker) || attacker == victim) {
-            return;
-        }
+    private static float attack(LivingHurtEvent event, LivingEntity victim, LivingEntity attacker) {
         if (CurioUtil.isWearing(attacker, ModItems.KNIGHT_MEDAL.get())) {
             if (victim.getArmorValue() > 0) {
                 event.setAmount(event.getAmount() + event.getAmount() * BONUS_DAMAGE_RATIO);
@@ -63,23 +65,35 @@ public class MedalEvents {
         if (CurioUtil.isWearing(attacker, ModItems.BLAZING_MEDAL.get()) && victim.isOnFire()) {
             event.setAmount(event.getAmount() + event.getAmount() * BONUS_DAMAGE_RATIO);
         }
+        float converted = 0.0F;
         if (CurioUtil.isWearing(attacker, ModItems.FRIGID_MEDAL.get())) {
-            convertToFrost(event, victim, attacker);
+            converted = event.getAmount() * FROST_CONVERSION_RATIO;
+            if (converted > 0.0F) {
+                event.setAmount(event.getAmount() - converted);
+            }
         }
+        return converted;
     }
 
-    private static void convertToFrost(LivingHurtEvent event, LivingEntity victim, LivingEntity attacker) {
-        float converted = event.getAmount() * FROST_CONVERSION_RATIO;
-        if (converted <= 0.0F) {
+    private static void settle(LivingEntity victim, DamageSource source, float converted) {
+        float magic = ToolEvents.pendingBonus;
+        ToolEvents.pendingBonus = 0.0F;
+        float extra = converted + magic;
+        if (extra <= 0.0F || !(source.getDirectEntity() instanceof LivingEntity attacker)) {
             return;
         }
-        event.setAmount(event.getAmount() - converted);
-        Holder<DamageType> holder = victim.level().registryAccess()
-                .registryOrThrow(Registries.DAMAGE_TYPE)
-                .getHolderOrThrow(FROST_CONVERSION);
+        DamageSource strike;
+        if (converted > 0.0F) {
+            Holder<DamageType> holder = victim.level().registryAccess()
+                    .registryOrThrow(Registries.DAMAGE_TYPE)
+                    .getHolderOrThrow(FROST_CONVERSION);
+            strike = new DerivedDamageSource(holder, attacker, attacker);
+        } else {
+            strike = new DerivedDamageSource(attacker.damageSources().indirectMagic(attacker, attacker));
+        }
         int invulnerableTime = victim.invulnerableTime;
         victim.invulnerableTime = 0;
-        victim.hurt(new DamageSource(holder, attacker, attacker), converted);
+        victim.hurt(strike, extra);
         if (victim.invulnerableTime < invulnerableTime) {
             victim.invulnerableTime = invulnerableTime;
         }
