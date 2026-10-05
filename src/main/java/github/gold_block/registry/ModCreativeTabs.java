@@ -8,6 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import twilightforest.init.TFBlocks;
 
 public class ModCreativeTabs {
 
@@ -31,6 +32,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.BLAZING_MEDAL.get());
                 output.accept(ModItems.KNIGHT_MEDAL.get());
                 output.accept(TLItems.BOSS_CHEST.get());
+                output.accept(TFBlocks.KEEPSAKE_CASKET.get().asItem());
             })
             .build());
 }

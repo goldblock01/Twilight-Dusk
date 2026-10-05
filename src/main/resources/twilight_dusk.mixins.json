@@ -6,7 +6,10 @@
   "refmap": "twilight_dusk.refmap.json",
   "mixins": [
     "InventoryDropAllMixin",
-    "PlayerScytheSweepMixin"
+    "PlayerScytheSweepMixin",
+    "CharmEventsMixin",
+    "KeepsakeCasketBlockEntityMixin",
+    "KeepsakeCasketBlockMixin"
   ],
   "client": [
   ],
