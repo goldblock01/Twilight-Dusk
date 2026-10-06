@@ -1,6 +1,7 @@
 package github.gold_block.twilightlootr.impl;
 
 import github.gold_block.Config;
+import github.gold_block.compat.LootrCompat;
 import github.gold_block.twilightlootr.block.entity.TFLootrBossChestBlockEntity;
 import github.gold_block.twilightlootr.init.TLBlocks;
 import net.minecraft.core.BlockPos;
@@ -22,7 +23,7 @@ public final class BossChestHandler {
 
     public static boolean entityDropsIntoChest(
             LivingEntity entity, DamageSource source, BlockState incomingChest, BlockPos pos) {
-        if (!Config.twilightLootrEnabled() || !TFConfig.COMMON_CONFIG.bossDropChests.get()) {
+        if (!LootrCompat.isLoaded() || !Config.twilightLootrEnabled() || !TFConfig.COMMON_CONFIG.bossDropChests.get()) {
             return false;
         }
         if (!(entity.level() instanceof ServerLevel serverLevel)) {
@@ -56,7 +57,7 @@ public final class BossChestHandler {
 
     public static <T extends LivingEntity & IBossLootBuffer> void depositDropsIntoChest(
             T boss, BlockState incomingChest, BlockPos pos, ServerLevel serverLevel) {
-        if (!Config.twilightLootrEnabled()) {
+        if (!LootrCompat.isLoaded() || !Config.twilightLootrEnabled()) {
             IBossLootBuffer.depositDropsIntoChest(boss, incomingChest, pos, serverLevel);
             return;
         }

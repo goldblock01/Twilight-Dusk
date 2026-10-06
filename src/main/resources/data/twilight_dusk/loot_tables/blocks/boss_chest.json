@@ -1,5 +1,11 @@
 {
   "type": "minecraft:block",
+  "conditions": [
+    {
+      "condition": "forge:mod_loaded",
+      "modid": "lootr"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
