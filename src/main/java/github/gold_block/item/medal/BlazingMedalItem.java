@@ -9,6 +9,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
 
+import java.util.UUID;
+
 public class BlazingMedalItem extends MedalItem {
 
     private static final String BLAZING_ARMOR = "blazing_armor";
@@ -19,11 +21,11 @@ public class BlazingMedalItem extends MedalItem {
     }
 
     @Override
-    protected Multimap<Attribute, AttributeModifier> modifiers() {
-        Multimap<Attribute, AttributeModifier> map = super.modifiers();
-        add(map, Attributes.ARMOR, BLAZING_ARMOR, 0.5D);
-        add(map, Attributes.ARMOR_TOUGHNESS, BLAZING_TOUGHNESS, 0.5D);
-        add(map, Attributes.ATTACK_DAMAGE, DAMAGE, 2.0D);
+    protected Multimap<Attribute, AttributeModifier> modifiers(UUID slotUuid) {
+        Multimap<Attribute, AttributeModifier> map = super.modifiers(slotUuid);
+        add(map, slotUuid, Attributes.ARMOR, BLAZING_ARMOR, 0.5D);
+        add(map, slotUuid, Attributes.ARMOR_TOUGHNESS, BLAZING_TOUGHNESS, 0.5D);
+        add(map, slotUuid, Attributes.ATTACK_DAMAGE, DAMAGE, 2.0D);
         return map;
     }
 

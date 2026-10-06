@@ -5,6 +5,8 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
+import java.util.UUID;
+
 public class FrigidMedalItem extends MedalItem {
 
     private static final String FRIGID_ARMOR = "frigid_armor";
@@ -15,10 +17,10 @@ public class FrigidMedalItem extends MedalItem {
     }
 
     @Override
-    protected Multimap<Attribute, AttributeModifier> modifiers() {
-        Multimap<Attribute, AttributeModifier> map = super.modifiers();
-        add(map, Attributes.ARMOR, FRIGID_ARMOR, 0.5D);
-        add(map, Attributes.ARMOR_TOUGHNESS, FRIGID_TOUGHNESS, 0.5D);
+    protected Multimap<Attribute, AttributeModifier> modifiers(UUID slotUuid) {
+        Multimap<Attribute, AttributeModifier> map = super.modifiers(slotUuid);
+        add(map, slotUuid, Attributes.ARMOR, FRIGID_ARMOR, 0.5D);
+        add(map, slotUuid, Attributes.ARMOR_TOUGHNESS, FRIGID_TOUGHNESS, 0.5D);
         return map;
     }
 }

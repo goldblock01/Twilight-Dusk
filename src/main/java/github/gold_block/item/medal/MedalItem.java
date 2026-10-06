@@ -39,16 +39,16 @@ public class MedalItem extends Item implements ICurioItem {
         super(properties.stacksTo(1));
     }
 
-    protected Multimap<Attribute, AttributeModifier> modifiers() {
+    protected Multimap<Attribute, AttributeModifier> modifiers(UUID slotUuid) {
         Multimap<Attribute, AttributeModifier> map = HashMultimap.create();
-        add(map, Attributes.ARMOR, ARMOR, 1.0D);
-        add(map, Attributes.ARMOR_TOUGHNESS, TOUGHNESS, 0.5D);
+        add(map, slotUuid, Attributes.ARMOR, ARMOR, 1.0D);
+        add(map, slotUuid, Attributes.ARMOR_TOUGHNESS, TOUGHNESS, 0.5D);
         return map;
     }
 
-    protected static void add(Multimap<Attribute, AttributeModifier> map, Attribute attribute, String name, double amount) {
+    protected static void add(Multimap<Attribute, AttributeModifier> map, UUID slotUuid, Attribute attribute, String name, double amount) {
         String key = TwilightDusk.MODID + ":medal/" + name;
-        UUID uuid = UUID.nameUUIDFromBytes(key.getBytes(StandardCharsets.UTF_8));
+        UUID uuid = UUID.nameUUIDFromBytes((slotUuid + key).getBytes(StandardCharsets.UTF_8));
         map.put(attribute, new AttributeModifier(uuid, key, amount, AttributeModifier.Operation.ADDITION));
     }
 
@@ -61,7 +61,7 @@ public class MedalItem extends Item implements ICurioItem {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        return modifiers();
+        return modifiers(uuid);
     }
 
     @Override

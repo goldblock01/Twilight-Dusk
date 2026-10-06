@@ -30,7 +30,7 @@ public class MedalEvents {
     private static final float FROST_CONVERSION_RATIO = 0.2F;
     private static final float FROST_RESISTANCE = 0.7F;
     private static final float CLIMATE_RESISTANCE = 0.1F;
-    private static final float BONUS_DAMAGE_RATIO = 1.2F;
+    private static final float BONUS_DAMAGE = 0.2F;
     private static final int SLOWNESS_DURATION = 100;
     private static final int WEAKNESS_DURATION = 60;
 
@@ -57,13 +57,13 @@ public class MedalEvents {
     private static float attack(LivingHurtEvent event, LivingEntity victim, LivingEntity attacker) {
         if (CurioUtil.isWearing(attacker, ModItems.KNIGHT_MEDAL.get())) {
             if (victim.getArmorValue() > 0) {
-                event.setAmount(event.getAmount() + event.getAmount() * BONUS_DAMAGE_RATIO);
+                event.setAmount(event.getAmount() * (1.0F + BONUS_DAMAGE));
             }
             victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOWNESS_DURATION, 0), attacker);
             victim.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION, 0), attacker);
         }
         if (CurioUtil.isWearing(attacker, ModItems.BLAZING_MEDAL.get()) && victim.isOnFire()) {
-            event.setAmount(event.getAmount() + event.getAmount() * BONUS_DAMAGE_RATIO);
+            event.setAmount(event.getAmount() * (1.0F + BONUS_DAMAGE));
         }
         float converted = 0.0F;
         if (CurioUtil.isWearing(attacker, ModItems.FRIGID_MEDAL.get())) {

@@ -13,6 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import top.theillusivec4.curios.api.SlotContext;
 
+import java.util.UUID;
+
 public class TwilightMedalItem extends MedalItem {
 
     private static final ResourceKey<Level> TWILIGHT_FOREST = ResourceKey.create(Registries.DIMENSION,
@@ -23,9 +25,9 @@ public class TwilightMedalItem extends MedalItem {
     }
 
     @Override
-    protected Multimap<Attribute, AttributeModifier> modifiers() {
-        Multimap<Attribute, AttributeModifier> map = super.modifiers();
-        add(map, Attributes.MAX_HEALTH, HEALTH, 2.0D);
+    protected Multimap<Attribute, AttributeModifier> modifiers(UUID slotUuid) {
+        Multimap<Attribute, AttributeModifier> map = super.modifiers(slotUuid);
+        add(map, slotUuid, Attributes.MAX_HEALTH, HEALTH, 2.0D);
         return map;
     }
 
