@@ -23,7 +23,8 @@ public final class BossChestHandler {
 
     public static boolean entityDropsIntoChest(
             LivingEntity entity, DamageSource source, BlockState incomingChest, BlockPos pos) {
-        if (!LootrCompat.isLoaded() || !Config.twilightLootrEnabled() || !TFConfig.COMMON_CONFIG.bossDropChests.get()) {
+        if (!LootrCompat.isLoaded() || !TLBlocks.BOSS_CHEST.isPresent() || !Config.twilightLootrEnabled()
+                || !TFConfig.COMMON_CONFIG.bossDropChests.get()) {
             return false;
         }
         if (!(entity.level() instanceof ServerLevel serverLevel)) {
@@ -57,7 +58,7 @@ public final class BossChestHandler {
 
     public static <T extends LivingEntity & IBossLootBuffer> void depositDropsIntoChest(
             T boss, BlockState incomingChest, BlockPos pos, ServerLevel serverLevel) {
-        if (!LootrCompat.isLoaded() || !Config.twilightLootrEnabled()) {
+        if (!LootrCompat.isLoaded() || !TLBlocks.BOSS_CHEST.isPresent() || !Config.twilightLootrEnabled()) {
             IBossLootBuffer.depositDropsIntoChest(boss, incomingChest, pos, serverLevel);
             return;
         }

@@ -1,7 +1,6 @@
 package github.gold_block.registry;
 
 import github.gold_block.TwilightDusk;
-import github.gold_block.compat.LootrCompat;
 import github.gold_block.twilightlootr.init.TLItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -32,7 +31,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.FRIGID_MEDAL.get());
                 output.accept(ModItems.BLAZING_MEDAL.get());
                 output.accept(ModItems.KNIGHT_MEDAL.get());
-                if (LootrCompat.isLoaded()) {
+                if (TLItems.BOSS_CHEST.isPresent()) {
                     output.accept(TLItems.BOSS_CHEST.get());
                 }
                 output.accept(TFBlocks.KEEPSAKE_CASKET.get().asItem());

@@ -1,5 +1,9 @@
 {
+  "replace": false,
   "values": [
-    "twilight_dusk:boss_chest"
+    {
+      "id": "twilight_dusk:boss_chest",
+      "required": false
+    }
   ]
 }
