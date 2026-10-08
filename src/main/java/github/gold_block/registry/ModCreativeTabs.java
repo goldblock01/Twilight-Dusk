@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import twilightforest.init.TFBlocks;
+import twilightforest.init.TFItems;
 
 public class ModCreativeTabs {
 
@@ -35,6 +36,8 @@ public class ModCreativeTabs {
                     output.accept(TLItems.BOSS_CHEST.get());
                 }
                 output.accept(TFBlocks.KEEPSAKE_CASKET.get().asItem());
+                output.accept(TFItems.BRITTLE_FLASK.get());
+                output.accept(TFItems.GREATER_FLASK.get());
                 output.accept(ModItems.DUSK_FROG_SPAWN_EGG.get());
                 output.accept(ModItems.DUSK_FROGSPAWN.get());
                 output.accept(ModItems.DUSK_TADPOLE_BUCKET.get());
