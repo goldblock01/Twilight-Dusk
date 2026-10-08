@@ -194,11 +194,12 @@ public class CasketEvents {
         casket.setCustomName(Component.literal(shortName + "'s "
                 + (level.getRandom().nextInt(1000) == 0 ? "Costco Casket" : casket.getDisplayName().getString())));
 
+        int damage = level.getBlockState(spot).getValue(KeepsakeCasketBlock.BREAKAGE);
         if (level.getRandom().nextFloat() <= 0.15F) {
-            if (TFItemStackUtils.damage >= 2) {
+            if (damage >= 2) {
                 ((CasketFinalForm) casket).twilight_dusk$setFinalForm(true);
             } else {
-                level.setBlockAndUpdate(spot, state.setValue(KeepsakeCasketBlock.BREAKAGE, TFItemStackUtils.damage + 1));
+                level.setBlockAndUpdate(spot, state.setValue(KeepsakeCasketBlock.BREAKAGE, damage + 1));
             }
         }
 

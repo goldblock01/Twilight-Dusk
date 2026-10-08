@@ -98,7 +98,7 @@ public class FieryScytheItem extends SwordItem implements FieryTool {
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         boolean result = super.hurtEnemy(stack, target, attacker);
         if (result) {
-            igniteTarget(target);
+            FieryTool.flameParticles(target);
         }
         return result;
     }

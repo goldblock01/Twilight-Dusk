@@ -1,6 +1,7 @@
 package github.gold_block.event;
 
 import github.gold_block.TwilightDusk;
+import github.gold_block.entity.DuskFrog;
 import github.gold_block.registry.ModEntities;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.MobSpawnType;
@@ -25,7 +26,7 @@ public class ModCommonEvents {
     @SubscribeEvent
     public static void onRegisterSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(ModEntities.DUSK_FROG.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Frog::checkFrogSpawnRules,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, DuskFrog::checkDuskFrogSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 }

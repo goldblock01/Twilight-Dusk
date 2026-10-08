@@ -1,6 +1,7 @@
 package github.gold_block.event;
 
 import github.gold_block.TwilightDusk;
+import github.gold_block.item.FieryTool;
 import github.gold_block.registry.ModItems;
 import github.gold_block.util.DerivedDamageSource;
 import github.gold_block.util.EventGuard;
@@ -49,6 +50,9 @@ public class ToolEvents {
                 phantomPickaxe(event, target);
             } else if (weapon.is(ModItems.PHANTOM_AXE.get())) {
                 phantomAxe(event, target);
+            }
+            if (FieryTool.ignites(weapon)) {
+                FieryTool.burn(target);
             }
         });
     }

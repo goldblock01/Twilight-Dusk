@@ -7,6 +7,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -65,6 +67,12 @@ public class DuskFrog extends Frog {
             return ModEntities.LAKE_VARIANT.get();
         }
         return ModEntities.SWAMP_VARIANT.get();
+    }
+
+    public static boolean checkDuskFrogSpawnRules(EntityType<DuskFrog> type, LevelAccessor level,
+                                                  MobSpawnType reason, BlockPos pos, RandomSource random) {
+        return level.getBlockState(pos.below()).is(BlockTags.FROGS_SPAWNABLE_ON)
+                && level.getRawBrightness(pos, 0) > 4;
     }
 
     @Override

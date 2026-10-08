@@ -33,5 +33,7 @@
   "tooltip.twilight_dusk.phantom_sword.desc": "§5- Deals §63§5 extra magic damage to armored targets\n§5- Is never lost on death\n§5- Cannot be enchanted with Curse of Vanishing",
   "tooltip.twilight_dusk.phantom_pickaxe.desc": "§5- Deals §62§5 extra damage to armored targets\n§5- Is never lost on death\n§5- Cannot be enchanted with Curse of Vanishing",
   "tooltip.twilight_dusk.phantom_axe.desc": "§5- Deals §63§5 extra damage to unarmored targets\n§5- Is never lost on death\n§5- Cannot be enchanted with Curse of Vanishing",
-  "block.twilight_dusk.boss_chest": "Boss Chest"
+  "block.twilight_dusk.boss_chest": "Boss Chest",
+  "twilight_dusk.flask.empty": "Empty",
+  "twilight_dusk.flask.empty_hint": "Right-click a potion onto this flask to fill it"
 }

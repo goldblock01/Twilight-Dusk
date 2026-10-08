@@ -9,7 +9,11 @@
     "PlayerScytheSweepMixin",
     "CharmEventsMixin",
     "KeepsakeCasketBlockEntityMixin",
-    "KeepsakeCasketBlockMixin"
+    "KeepsakeCasketBlockMixin",
+    "BrittleFlaskItemMixin",
+    "GreaterFlaskItemMixin",
+    "ItemTooltipMixin",
+    "KnightPhantomMixin"
   ],
   "client": [
   ],

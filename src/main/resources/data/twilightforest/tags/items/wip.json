@@ -1,6 +1,8 @@
 {
   "values": [],
   "remove": [
-    "twilightforest:keepsake_casket"
+    "twilightforest:keepsake_casket",
+    "twilightforest:brittle_potion_flask",
+    "twilightforest:greater_potion_flask"
   ]
 }

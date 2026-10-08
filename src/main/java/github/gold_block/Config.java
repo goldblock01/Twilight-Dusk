@@ -19,10 +19,13 @@ public final class Config {
     public static final ForgeConfigSpec.BooleanValue FIX_WEATHER_COMMAND = BUILDER
             .define("fix_weather_command", true);
 
+    public static final ForgeConfigSpec.BooleanValue PHANTOM_KNIGHT_TOOLS = BUILDER
+            .define("phantom_knight_tools", true);
+
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     private static final List<ForgeConfigSpec.BooleanValue> OPTIONS =
-            List.of(TWILIGHT_LOOTR_ENABLED, FIX_WEATHER_COMMAND);
+            List.of(TWILIGHT_LOOTR_ENABLED, FIX_WEATHER_COMMAND, PHANTOM_KNIGHT_TOOLS);
 
     private static final Path FILE =
             FMLPaths.CONFIGDIR.get().resolve(TwilightDusk.MODID + "-common.toml");
@@ -38,6 +41,10 @@ public final class Config {
 
     public static boolean fixWeatherCommand() {
         return read(FIX_WEATHER_COMMAND);
+    }
+
+    public static boolean phantomKnightTools() {
+        return read(PHANTOM_KNIGHT_TOOLS);
     }
 
     public static void reloadIfFileChanged() {

@@ -1,7 +1,7 @@
 package github.gold_block.client;
 
 import github.gold_block.TwilightDusk;
-import github.gold_block.registry.ModItems;
+import github.gold_block.util.PhantomKnightEquipment;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -11,7 +11,6 @@ import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import twilightforest.entity.boss.KnightPhantom;
-import twilightforest.init.TFItems;
 
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -27,7 +26,7 @@ public final class PhantomKnightRenderEvents {
         if (!(knight instanceof KnightPhantom)) {
             return;
         }
-        Item phantom = phantomOf(knight.getMainHandItem());
+        Item phantom = PhantomKnightEquipment.phantomOf(knight.getMainHandItem());
         if (phantom == null) {
             return;
         }
@@ -41,18 +40,5 @@ public final class PhantomKnightRenderEvents {
         if (held != null) {
             event.getEntity().setItemSlot(EquipmentSlot.MAINHAND, held);
         }
-    }
-
-    private static Item phantomOf(ItemStack stack) {
-        if (stack.is(TFItems.KNIGHTMETAL_SWORD.get())) {
-            return ModItems.PHANTOM_SWORD.get();
-        }
-        if (stack.is(TFItems.KNIGHTMETAL_AXE.get())) {
-            return ModItems.PHANTOM_AXE.get();
-        }
-        if (stack.is(TFItems.KNIGHTMETAL_PICKAXE.get())) {
-            return ModItems.PHANTOM_PICKAXE.get();
-        }
-        return null;
     }
 }
