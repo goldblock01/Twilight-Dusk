@@ -84,7 +84,6 @@ public final class BossChestHandler {
             return;
         }
 
-        chest.setLootTable(boss.getLootTable(), serverLevel.getRandom().nextLong());
         chest.setBossItems(boss.getItemStacks());
     }
 

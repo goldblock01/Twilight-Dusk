@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "github.gold_block.twilightlootr.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "twilight_dusk.refmap.json",
   "plugin": "github.gold_block.twilightlootr.mixin.TwilightLootrMixinPlugin",
   "mixins": [
     "MixinBossChestLich",

@@ -20,8 +20,7 @@ public abstract class MixinBossChestUrGhast {
                     value = "INVOKE",
                     target = "Ltwilightforest/entity/boss/IBossLootBuffer;depositDropsIntoChest(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/server/level/ServerLevel;)V",
                     remap = false
-            ),
-            remap = false
+            )
     )
     private <T extends LivingEntity & IBossLootBuffer> void twilightlootr$depositDropsIntoChest(
             T boss, BlockState incomingChest, BlockPos pos, ServerLevel serverLevel) {
