@@ -34,6 +34,8 @@ public class ModCreativeTabs {
                         new EnchantmentInstance(Enchantments.BLOCK_EFFICIENCY, 3),
                         new EnchantmentInstance(Enchantments.BLOCK_FORTUNE, 2),
                         new EnchantmentInstance(Enchantments.UNBREAKING, 3));
+                acceptEnchanted(output, ModItems.NAGA_CURVED_SWORD.get(),
+                        new EnchantmentInstance(Enchantments.MOB_LOOTING, 3));
                 output.accept(ModItems.MEDAL.get());
                 output.accept(ModItems.TWILIGHT_MEDAL.get());
                 output.accept(ModItems.FRIGID_MEDAL.get());

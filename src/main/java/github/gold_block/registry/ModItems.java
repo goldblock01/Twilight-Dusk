@@ -6,6 +6,7 @@ import github.gold_block.item.FieryAxeItem;
 import github.gold_block.item.FieryScytheItem;
 import github.gold_block.item.FieryShovelItem;
 import github.gold_block.item.FrostyPickItem;
+import github.gold_block.item.NagaCurvedSwordItem;
 import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
@@ -103,4 +104,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> FROSTY_PICK = ITEMS.register("frosty_pick",
             () -> new FrostyPickItem(new Item.Properties().durability(960).rarity(RARITY)));
+
+    public static final RegistryObject<Item> NAGA_CURVED_SWORD = ITEMS.register("naga_curved_sword",
+            () -> new NagaCurvedSwordItem(new Item.Properties().durability(250).rarity(RARITY)));
 }

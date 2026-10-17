@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "BB ",
+    " BC",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "twilightforest:naga_scale"
+    },
+    "B": {
+      "item": "twilightforest:ironwood_ingot"
+    },
+    "C": {
+      "item": "twilightforest:steeleaf_ingot"
+    }
+  },
+  "result": {
+    "item": "twilight_dusk:naga_curved_sword",
+    "nbt": "{Enchantments:[{id:\"minecraft:looting\",lvl:3s}]}"
+  }
+}
