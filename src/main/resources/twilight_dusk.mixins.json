@@ -13,7 +13,8 @@
     "BrittleFlaskItemMixin",
     "GreaterFlaskItemMixin",
     "ItemTooltipMixin",
-    "KnightPhantomMixin"
+    "KnightPhantomMixin",
+    "IceBlockMixin"
   ],
   "client": [],
   "injectors": {

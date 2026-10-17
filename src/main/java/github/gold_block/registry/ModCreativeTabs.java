@@ -5,7 +5,10 @@ import github.gold_block.twilightlootr.init.TLItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import twilightforest.init.TFBlocks;
@@ -27,6 +30,10 @@ public class ModCreativeTabs {
                 output.accept(ModItems.FIERY_AXE.get());
                 output.accept(ModItems.FIERY_SHOVEL.get());
                 output.accept(ModItems.FIERY_SCYTHE.get());
+                acceptEnchanted(output, ModItems.FROSTY_PICK.get(),
+                        new EnchantmentInstance(Enchantments.BLOCK_EFFICIENCY, 3),
+                        new EnchantmentInstance(Enchantments.BLOCK_FORTUNE, 2),
+                        new EnchantmentInstance(Enchantments.UNBREAKING, 3));
                 output.accept(ModItems.MEDAL.get());
                 output.accept(ModItems.TWILIGHT_MEDAL.get());
                 output.accept(ModItems.FRIGID_MEDAL.get());
@@ -45,6 +52,15 @@ public class ModCreativeTabs {
                 output.accept(ModItems.EXTREME_COLD_ICE_BONES.get());
                 output.accept(ModItems.RUSTED_IRON_SHEET.get());
                 output.accept(ModItems.TIME_WATCH.get());
+                output.accept(ModItems.BURST_SCEPTER.get());
             })
             .build());
+
+    private static void acceptEnchanted(CreativeModeTab.Output output, Item item, EnchantmentInstance... instances) {
+        ItemStack stack = new ItemStack(item);
+        for (EnchantmentInstance instance : instances) {
+            stack.enchant(instance.enchantment, instance.level);
+        }
+        output.accept(stack);
+    }
 }

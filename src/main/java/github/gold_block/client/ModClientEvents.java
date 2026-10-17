@@ -18,6 +18,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import twilightforest.client.renderer.entity.CustomProjectileTextureRenderer;
 import twilightforest.init.TFEntities;
 import twilightforest.init.TFItems;
 
@@ -29,6 +30,8 @@ public class ModClientEvents {
         event.registerEntityRenderer(ModEntities.DUSK_FROG.get(), FrogRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_TADPOLE.get(), DuskTadpoleRenderer::new);
         event.registerEntityRenderer(TFEntities.SNOW_QUEEN.get(), AbaiQueenRenderer::new);
+        event.registerEntityRenderer(ModEntities.BURST_BOLT.get(),
+                ctx -> new CustomProjectileTextureRenderer(ctx, BURST_BOLT_TEXTURE));
     }
 
     @SubscribeEvent
@@ -50,4 +53,6 @@ public class ModClientEvents {
     }
 
     private static final ResourceLocation POTION_LEVEL = new ResourceLocation("twilightforest", "potion_level");
+    private static final ResourceLocation BURST_BOLT_TEXTURE =
+            new ResourceLocation(TwilightDusk.MODID, "textures/entity/burst_bolt.png");
 }

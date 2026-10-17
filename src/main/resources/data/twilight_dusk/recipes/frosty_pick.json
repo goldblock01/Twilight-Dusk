@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "CAC",
+    "CB ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "twilight_dusk:extreme_cold_ice_bones"
+    },
+    "B": {
+      "item": "twilightforest:alpha_yeti_fur"
+    },
+    "C": {
+      "item": "minecraft:blue_ice"
+    }
+  },
+  "result": {
+    "item": "twilight_dusk:frosty_pick",
+    "nbt": "{Enchantments:[{id:\"minecraft:efficiency\",lvl:3s},{id:\"minecraft:fortune\",lvl:2s},{id:\"minecraft:unbreaking\",lvl:3s}]}"
+  }
+}

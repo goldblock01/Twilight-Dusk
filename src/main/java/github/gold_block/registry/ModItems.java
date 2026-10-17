@@ -1,9 +1,11 @@
 package github.gold_block.registry;
 
 import github.gold_block.TwilightDusk;
+import github.gold_block.item.BurstScepterItem;
 import github.gold_block.item.FieryAxeItem;
 import github.gold_block.item.FieryScytheItem;
 import github.gold_block.item.FieryShovelItem;
+import github.gold_block.item.FrostyPickItem;
 import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
@@ -95,4 +97,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> TIME_WATCH = ITEMS.register("time_watch",
             () -> new TimeWatchItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> BURST_SCEPTER = ITEMS.register("burst_scepter",
+            () -> new BurstScepterItem(new Item.Properties().durability(25).rarity(RARITY)));
+
+    public static final RegistryObject<Item> FROSTY_PICK = ITEMS.register("frosty_pick",
+            () -> new FrostyPickItem(new Item.Properties().durability(960).rarity(RARITY)));
 }

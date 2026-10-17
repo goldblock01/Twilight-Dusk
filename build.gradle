@@ -70,7 +70,6 @@ mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
 
     config "${mod_id}.mixins.json"
-    config "${mod_id}.twilightlootr.mixins.json"
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
@@ -91,6 +90,8 @@ dependencies {
     implementation fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
     implementation fg.deobf("curse.maven:lootr-361276:7263076")
     implementation fg.deobf("curse.maven:curios-309927:6418456")
+    implementation fg.deobf("curse.maven:jei-238222:7391695")
+    implementation fg.deobf("curse.maven:jade-324717:6855440")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

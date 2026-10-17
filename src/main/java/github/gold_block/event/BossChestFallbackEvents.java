@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import twilightforest.TFConfig;
 import twilightforest.entity.EnforcedHomePoint;
 import twilightforest.entity.boss.IBossLootBuffer;
+import twilightforest.entity.boss.Lich;
 import twilightforest.util.EntityUtil;
 
 import java.util.ArrayList;
@@ -33,13 +34,18 @@ public class BossChestFallbackEvents {
         EventGuard.run(() -> {
             if (!(event.getEntity() instanceof Mob boss) || !(boss instanceof EnforcedHomePoint)
                     || !(boss.level() instanceof ServerLevel level)
-                    || !Config.twilightLootrEnabled() || !TFConfig.COMMON_CONFIG.bossDropChests.get()) {
+                    || !TFConfig.COMMON_CONFIG.bossDropChests.get()) {
+                return;
+            }
+            boolean lichChest = boss instanceof Lich;
+            if (!lichChest && !Config.twilightLootrEnabled()) {
                 return;
             }
             BlockPos pos = EntityUtil.bossChestLocation((Mob & EnforcedHomePoint) boss);
             boolean buffered = boss instanceof IBossLootBuffer;
             WATCHERS.add(new Watcher(level, pos, level.getBlockState(pos),
-                    buffered ? null : boss.getLootTable(), buffered ? 0L : boss.getLootTableSeed(), WATCH_TICKS));
+                    buffered ? null : boss.getLootTable(), buffered ? 0L : boss.getLootTableSeed(),
+                    lichChest, WATCH_TICKS));
         });
     }
 
@@ -53,7 +59,7 @@ public class BossChestFallbackEvents {
             while (iterator.hasNext()) {
                 Watcher watcher = iterator.next();
                 if (BossChestHandler.convertExistingChest(watcher.level, watcher.pos, watcher.before,
-                        watcher.lootTable, watcher.seed) || --watcher.ticks <= 0) {
+                        watcher.lootTable, watcher.seed, watcher.lichChest) || --watcher.ticks <= 0) {
                     iterator.remove();
                 }
             }
@@ -67,15 +73,17 @@ public class BossChestFallbackEvents {
         private final BlockState before;
         private final ResourceLocation lootTable;
         private final long seed;
+        private final boolean lichChest;
         private int ticks;
 
         private Watcher(ServerLevel level, BlockPos pos, BlockState before,
-                        ResourceLocation lootTable, long seed, int ticks) {
+                        ResourceLocation lootTable, long seed, boolean lichChest, int ticks) {
             this.level = level;
             this.pos = pos;
             this.before = before;
             this.lootTable = lootTable;
             this.seed = seed;
+            this.lichChest = lichChest;
             this.ticks = ticks;
         }
     }

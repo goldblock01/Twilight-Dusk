@@ -1,6 +1,7 @@
 package github.gold_block.registry;
 
 import github.gold_block.TwilightDusk;
+import github.gold_block.entity.BurstBolt;
 import github.gold_block.entity.DuskFrog;
 import github.gold_block.entity.DuskFrogAi;
 import github.gold_block.entity.DuskTadpole;
@@ -31,6 +32,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DuskTadpole>> DUSK_TADPOLE = ENTITY_TYPES.register("dusk_tadpole",
             () -> EntityType.Builder.of(DuskTadpole::new, MobCategory.CREATURE)
                     .sized(DuskTadpole.HITBOX_WIDTH, DuskTadpole.HITBOX_HEIGHT).clientTrackingRange(10).build("dusk_tadpole"));
+
+    public static final RegistryObject<EntityType<BurstBolt>> BURST_BOLT = ENTITY_TYPES.register("burst_bolt",
+            () -> EntityType.Builder.<BurstBolt>of(BurstBolt::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("burst_bolt"));
 
     public static final RegistryObject<FrogVariant> SWAMP_VARIANT = FROG_VARIANTS.register("swamp",
             () -> new FrogVariant(new ResourceLocation(TwilightDusk.MODID, "textures/entity/frog/swamp_frog.png")));
