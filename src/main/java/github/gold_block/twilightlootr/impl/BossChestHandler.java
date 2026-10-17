@@ -23,7 +23,7 @@ import twilightforest.init.TFItems;
 
 public final class BossChestHandler {
 
-    private static final float BURST_SCEPTER_CHANCE = 0.25F;
+    private static final float BURST_SCEPTER_CHANCE = 0.2F;
 
     private BossChestHandler() {
     }
@@ -99,12 +99,19 @@ public final class BossChestHandler {
 
     private static void replaceScepter(NonNullList<ItemStack> items, RandomSource random) {
         for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).is(TFItems.TWILIGHT_SCEPTER.get())) {
+            if (isScepter(items.get(i))) {
                 if (random.nextFloat() < BURST_SCEPTER_CHANCE) {
                     items.set(i, new ItemStack(ModItems.BURST_SCEPTER.get()));
                 }
                 return;
             }
         }
+    }
+
+    private static boolean isScepter(ItemStack stack) {
+        return stack.is(TFItems.TWILIGHT_SCEPTER.get())
+                || stack.is(TFItems.LIFEDRAIN_SCEPTER.get())
+                || stack.is(TFItems.ZOMBIE_SCEPTER.get())
+                || stack.is(TFItems.FORTIFICATION_SCEPTER.get());
     }
 }

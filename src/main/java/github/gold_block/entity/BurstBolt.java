@@ -6,10 +6,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import twilightforest.entity.projectile.TFThrowable;
+
+import java.util.List;
 
 public class BurstBolt extends TFThrowable {
 
@@ -58,8 +62,19 @@ public class BurstBolt extends TFThrowable {
         }
 
         Entity owner = this.getOwner();
+        AABB area = new AABB(this.getX() - 5.0D, this.getY() - 5.0D, this.getZ() - 5.0D,
+                this.getX() + 5.0D, this.getY() + 5.0D, this.getZ() + 5.0D);
+        List<ItemEntity> drops = serverLevel.getEntitiesOfClass(ItemEntity.class, area, drop -> !drop.isInvulnerable());
+        for (ItemEntity drop : drops) {
+            drop.setInvulnerable(true);
+        }
+
         serverLevel.explode(this, serverLevel.damageSources().explosion(owner, this), null,
                 this.getX(), this.getY(), this.getZ(), EXPLOSION_POWER, false, Level.ExplosionInteraction.NONE);
+
+        for (ItemEntity drop : drops) {
+            drop.setInvulnerable(false);
+        }
         this.discard();
     }
 }

@@ -16,6 +16,7 @@
   "block.twilight_dusk.dusk_frogspawn": "Dusk Frogspawn",
   "entity.twilight_dusk.dusk_frog": "Dusk Frog",
   "entity.twilight_dusk.dusk_tadpole": "Dusk Tadpole",
+  "entity.twilight_dusk.burst_bolt": "Burst Bolt",
   "item.twilight_dusk.dusk_frog_spawn_egg": "Dusk Frog Spawn Egg",
   "item.twilight_dusk.dusk_tadpole_bucket": "Bucket of Dusk Tadpole",
   "item.twilight_dusk.maze_gel": "Maze Gel",
@@ -40,6 +41,7 @@
   "tooltip.twilight_dusk.phantom_axe.desc": "§5- Deals §63§5 extra damage to unarmored targets\n§5- Is never lost on death\n§5- Cannot be enchanted with Curse of Vanishing",
   "block.twilight_dusk.boss_chest": "Boss Chest",
   "tooltip.twilight_dusk.time_watch.desc": "§5- Accelerates random ticks within §622×22×22§5 of the wearer",
+  "tooltip.twilight_dusk.frosty_pick.desc": "§5- Mines blocks of hardness §630§5 or higher §650%§5 faster\n§5- Ice blocks drop themselves when mined\n§5- Inflicts §63§5 seconds of Frosted on hit",
   "twilight_dusk.flask.empty": "Empty",
   "twilight_dusk.flask.empty_hint": "Right-click a potion onto this flask to fill it"
 }

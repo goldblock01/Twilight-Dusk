@@ -14,7 +14,8 @@
     "GreaterFlaskItemMixin",
     "ItemTooltipMixin",
     "KnightPhantomMixin",
-    "IceBlockMixin"
+    "IceBlockMixin",
+    "ServerAdvancementManagerMixin"
   ],
   "client": [],
   "injectors": {
