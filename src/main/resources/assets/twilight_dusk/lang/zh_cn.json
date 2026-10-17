@@ -27,6 +27,7 @@
   "item.twilight_dusk.burst_scepter": "炎爆权杖",
   "item.twilight_dusk.frosty_pick": "极寒冰镐",
   "item.twilight_dusk.naga_curved_sword": "娜迦弯刀",
+  "item.twilight_dusk.tower_destroyer": "高塔摧毁者",
   "curios.identifier.medal": "勋章",
   "curios.modifiers.medal": "佩戴勋章时：",
   "tooltip.twilight_dusk.hold_shift": "§5按住 §6Shift§5 查看详情。",
@@ -44,6 +45,7 @@
   "tooltip.twilight_dusk.time_watch.desc": "§5- 佩戴时，加速周围 §622×22×22§5 范围内的随机刻",
   "tooltip.twilight_dusk.frosty_pick.desc": "§5- 挖掘硬度大于等于 §630§5 的方块时提速 §650%\n§5- 挖掘冰块时直接掉落\n§5- 命中时使目标获得 §63§5 秒霜冻",
   "tooltip.twilight_dusk.naga_curved_sword.desc": "§5- 手持时，有 §610%§5 概率使受到的伤害降低 §610%\n§5- 疾跑时，攻击伤害提升 §610%",
+  "tooltip.twilight_dusk.tower_destroyer.desc": "§5- 挖掘塔木类木板时提速 §61600%",
   "twilight_dusk.flask.empty": "空",
   "twilight_dusk.flask.empty_hint": "将药水拖到药水瓶上右键即可装填"
 }

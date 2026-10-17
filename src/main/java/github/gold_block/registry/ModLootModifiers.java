@@ -3,6 +3,7 @@ package github.gold_block.registry;
 import com.mojang.serialization.Codec;
 import github.gold_block.TwilightDusk;
 import github.gold_block.loot.FieryToolSmeltingModifier;
+import github.gold_block.loot.TowerDestroyerReplaceModifier;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,4 +16,7 @@ public class ModLootModifiers {
 
     public static final RegistryObject<Codec<FieryToolSmeltingModifier>> FIERY_TOOL_SMELTING =
             LOOT_MODIFIERS.register("fiery_tool_smelting", () -> FieryToolSmeltingModifier.CODEC);
+
+    public static final RegistryObject<Codec<TowerDestroyerReplaceModifier>> TOWER_DESTROYER_REPLACE =
+            LOOT_MODIFIERS.register("tower_destroyer_replace", () -> TowerDestroyerReplaceModifier.CODEC);
 }

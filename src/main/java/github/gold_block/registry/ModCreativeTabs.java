@@ -55,6 +55,10 @@ public class ModCreativeTabs {
                 output.accept(ModItems.RUSTED_IRON_SHEET.get());
                 output.accept(ModItems.TIME_WATCH.get());
                 output.accept(ModItems.BURST_SCEPTER.get());
+                acceptEnchanted(output, ModItems.TOWER_DESTROYER.get(),
+                        new EnchantmentInstance(Enchantments.BLOCK_EFFICIENCY, 4),
+                        new EnchantmentInstance(Enchantments.BLOCK_FORTUNE, 2),
+                        new EnchantmentInstance(Enchantments.UNBREAKING, 3));
             })
             .build());
 

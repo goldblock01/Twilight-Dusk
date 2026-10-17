@@ -1,0 +1,9 @@
+{
+  "type": "twilight_dusk:tower_destroyer_replace",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:chests/darktower_key"
+    }
+  ]
+}

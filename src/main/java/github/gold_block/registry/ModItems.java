@@ -11,6 +11,7 @@ import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
 import github.gold_block.item.TimeWatchItem;
+import github.gold_block.item.TowerDestroyerItem;
 import github.gold_block.item.medal.BlazingMedalItem;
 import github.gold_block.item.medal.FrigidMedalItem;
 import github.gold_block.item.medal.KnightMedalItem;
@@ -107,4 +108,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> NAGA_CURVED_SWORD = ITEMS.register("naga_curved_sword",
             () -> new NagaCurvedSwordItem(new Item.Properties().durability(250).rarity(RARITY)));
+
+    public static final RegistryObject<Item> TOWER_DESTROYER = ITEMS.register("tower_destroyer",
+            () -> new TowerDestroyerItem(new Item.Properties().durability(1080).rarity(RARITY)));
 }

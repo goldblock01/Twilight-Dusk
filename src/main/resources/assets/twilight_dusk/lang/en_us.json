@@ -26,6 +26,7 @@
   "item.twilight_dusk.burst_scepter": "Burst Scepter",
   "item.twilight_dusk.frosty_pick": "Frosty Pick",
   "item.twilight_dusk.naga_curved_sword": "Naga Curved Sword",
+  "item.twilight_dusk.tower_destroyer": "Tower Destroyer",
   "curios.identifier.medal": "Medal",
   "curios.modifiers.medal": "When worn as medal:",
   "tooltip.twilight_dusk.hold_shift": "§5Hold §6Shift§5 to see details.",
@@ -44,6 +45,7 @@
   "tooltip.twilight_dusk.time_watch.desc": "§5- Accelerates random ticks within §622×22×22§5 of the wearer",
   "tooltip.twilight_dusk.frosty_pick.desc": "§5- Mines blocks of hardness §630§5 or higher §650%§5 faster\n§5- Ice blocks drop themselves when mined\n§5- Inflicts §63§5 seconds of Frosted on hit",
   "tooltip.twilight_dusk.naga_curved_sword.desc": "§5- While held, §610%§5 chance to take §610%§5 less damage\n§5- Deals §610%§5 more damage while sprinting",
+  "tooltip.twilight_dusk.tower_destroyer.desc": "§5- Mines towerwood blocks §61600%§5 faster",
   "twilight_dusk.flask.empty": "Empty",
   "twilight_dusk.flask.empty_hint": "Right-click a potion onto this flask to fill it"
 }
