@@ -18,6 +18,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import twilightforest.init.TFEntities;
 import twilightforest.init.TFItems;
 
 @Mod.EventBusSubscriber(modid = TwilightDusk.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -27,6 +28,7 @@ public class ModClientEvents {
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.DUSK_FROG.get(), FrogRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_TADPOLE.get(), DuskTadpoleRenderer::new);
+        event.registerEntityRenderer(TFEntities.SNOW_QUEEN.get(), AbaiQueenRenderer::new);
     }
 
     @SubscribeEvent

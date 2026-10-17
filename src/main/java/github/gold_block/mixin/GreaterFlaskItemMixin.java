@@ -15,7 +15,7 @@ import java.util.List;
 @Mixin(GreaterFlaskItem.class)
 public abstract class GreaterFlaskItemMixin {
 
-    @Inject(method = "appendHoverText", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "appendHoverText", at = @At("HEAD"), cancellable = true, require = 0)
     private void twilight_dusk$hideTooltipText(ItemStack stack, Level level, List<Component> tooltip,
                                                TooltipFlag flag, CallbackInfo ci) {
         ci.cancel();

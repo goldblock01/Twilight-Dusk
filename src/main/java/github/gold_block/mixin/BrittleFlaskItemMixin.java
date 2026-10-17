@@ -26,7 +26,7 @@ public abstract class BrittleFlaskItemMixin {
     @Shadow
     public abstract boolean canBreak();
 
-    @Inject(method = "overrideOtherStackedOnMe", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "overrideOtherStackedOnMe", at = @At("HEAD"), cancellable = true, require = 0)
     private void twilight_dusk$stackPotion(ItemStack stack, ItemStack other, Slot slot, ClickAction action,
                                            Player player, SlotAccess access, CallbackInfoReturnable<Boolean> cir) {
         if (action == ClickAction.SECONDARY && other.getItem() instanceof PotionItem) {
@@ -34,12 +34,12 @@ public abstract class BrittleFlaskItemMixin {
         }
     }
 
-    @Inject(method = "getBarWidth", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getBarWidth", at = @At("HEAD"), cancellable = true, require = 0)
     private void twilight_dusk$barWidth(ItemStack stack, CallbackInfoReturnable<Integer> cir) {
         cir.setReturnValue(FlaskBehavior.barWidth(stack, this.canBreak()));
     }
 
-    @Inject(method = "appendHoverText", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "appendHoverText", at = @At("HEAD"), cancellable = true, require = 0)
     private void twilight_dusk$hideTooltipText(ItemStack stack, Level level, List<Component> tooltip,
                                                TooltipFlag flag, CallbackInfo ci) {
         ci.cancel();

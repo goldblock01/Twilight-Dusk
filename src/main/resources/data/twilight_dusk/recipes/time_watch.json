@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ACA",
+    "CBC",
+    "ACA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:clock"
+    },
+    "B": {
+      "item": "twilightforest:time_sapling"
+    },
+    "C": {
+      "item": "twilightforest:time_log"
+    }
+  },
+  "result": {
+    "item": "twilight_dusk:time_watch",
+    "count": 1
+  }
+}

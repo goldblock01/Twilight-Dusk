@@ -42,6 +42,9 @@ public class ModCreativeTabs {
                 output.accept(ModItems.DUSK_FROGSPAWN.get());
                 output.accept(ModItems.DUSK_TADPOLE_BUCKET.get());
                 output.accept(ModItems.MAZE_GEL.get());
+                output.accept(ModItems.EXTREME_COLD_ICE_BONES.get());
+                output.accept(ModItems.RUSTED_IRON_SHEET.get());
+                output.accept(ModItems.TIME_WATCH.get());
             })
             .build());
 }

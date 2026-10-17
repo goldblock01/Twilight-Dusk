@@ -22,10 +22,13 @@ public final class Config {
     public static final ForgeConfigSpec.BooleanValue PHANTOM_KNIGHT_TOOLS = BUILDER
             .define("phantom_knight_tools", true);
 
+    public static final ForgeConfigSpec.BooleanValue SCEPTER_RETEXTURE = BUILDER
+            .define("scepter_retexture", true);
+
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     private static final List<ForgeConfigSpec.BooleanValue> OPTIONS =
-            List.of(TWILIGHT_LOOTR_ENABLED, FIX_WEATHER_COMMAND, PHANTOM_KNIGHT_TOOLS);
+            List.of(TWILIGHT_LOOTR_ENABLED, FIX_WEATHER_COMMAND, PHANTOM_KNIGHT_TOOLS, SCEPTER_RETEXTURE);
 
     private static final Path FILE =
             FMLPaths.CONFIGDIR.get().resolve(TwilightDusk.MODID + "-common.toml");
@@ -45,6 +48,10 @@ public final class Config {
 
     public static boolean phantomKnightTools() {
         return read(PHANTOM_KNIGHT_TOOLS);
+    }
+
+    public static boolean scepterRetexture() {
+        return read(SCEPTER_RETEXTURE);
     }
 
     public static void reloadIfFileChanged() {

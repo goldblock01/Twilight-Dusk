@@ -18,12 +18,12 @@ public class KeepsakeCasketBlockEntityMixin implements CasketFinalForm {
     @Unique
     private boolean twilight_dusk$finalForm;
 
-    @Inject(method = "load(Lnet/minecraft/nbt/CompoundTag;)V", at = @At("TAIL"))
+    @Inject(method = "load(Lnet/minecraft/nbt/CompoundTag;)V", at = @At("TAIL"), require = 0)
     private void twilight_dusk$loadFinalForm(CompoundTag tag, CallbackInfo ci) {
         twilight_dusk$finalForm = tag.getBoolean(FINAL_FORM_TAG);
     }
 
-    @Inject(method = "saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V", at = @At("TAIL"))
+    @Inject(method = "saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V", at = @At("TAIL"), require = 0)
     private void twilight_dusk$saveFinalForm(CompoundTag tag, CallbackInfo ci) {
         if (twilight_dusk$finalForm) {
             tag.putBoolean(FINAL_FORM_TAG, true);

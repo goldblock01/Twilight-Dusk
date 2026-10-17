@@ -8,7 +8,7 @@ version = "${mod_version}"
 displayName = "${mod_name}"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
-mixinConfigs = ["${mod_id}.mixins.json", "${mod_id}.twilightlootr.mixins.json"]
+mixinConfigs = ["${mod_id}.mixins.json"]
 
 [[dependencies."${mod_id}"]]
 modId = "forge"

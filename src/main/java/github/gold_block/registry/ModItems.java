@@ -7,6 +7,7 @@ import github.gold_block.item.FieryShovelItem;
 import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
+import github.gold_block.item.TimeWatchItem;
 import github.gold_block.item.medal.BlazingMedalItem;
 import github.gold_block.item.medal.FrigidMedalItem;
 import github.gold_block.item.medal.KnightMedalItem;
@@ -85,4 +86,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> MAZE_GEL = ITEMS.register("maze_gel",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> EXTREME_COLD_ICE_BONES = ITEMS.register("extreme_cold_ice_bones",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RUSTED_IRON_SHEET = ITEMS.register("rusted_iron_sheet",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TIME_WATCH = ITEMS.register("time_watch",
+            () -> new TimeWatchItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 }

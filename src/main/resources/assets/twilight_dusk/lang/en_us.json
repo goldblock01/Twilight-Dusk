@@ -19,6 +19,9 @@
   "item.twilight_dusk.dusk_frog_spawn_egg": "Dusk Frog Spawn Egg",
   "item.twilight_dusk.dusk_tadpole_bucket": "Bucket of Dusk Tadpole",
   "item.twilight_dusk.maze_gel": "Maze Gel",
+  "item.twilight_dusk.extreme_cold_ice_bones": "Extreme Cold Ice Bones",
+  "item.twilight_dusk.rusted_iron_sheet": "Rusted Iron Sheet",
+  "item.twilight_dusk.time_watch": "Time Watch",
   "curios.identifier.medal": "Medal",
   "curios.modifiers.medal": "When worn as medal:",
   "tooltip.twilight_dusk.hold_shift": "§5Hold §6Shift§5 to see details.",
@@ -34,6 +37,7 @@
   "tooltip.twilight_dusk.phantom_pickaxe.desc": "§5- Deals §62§5 extra damage to armored targets\n§5- Is never lost on death\n§5- Cannot be enchanted with Curse of Vanishing",
   "tooltip.twilight_dusk.phantom_axe.desc": "§5- Deals §63§5 extra damage to unarmored targets\n§5- Is never lost on death\n§5- Cannot be enchanted with Curse of Vanishing",
   "block.twilight_dusk.boss_chest": "Boss Chest",
+  "tooltip.twilight_dusk.time_watch.desc": "§5- Accelerates random ticks within §622×22×22§5 of the wearer",
   "twilight_dusk.flask.empty": "Empty",
   "twilight_dusk.flask.empty_hint": "Right-click a potion onto this flask to fill it"
 }

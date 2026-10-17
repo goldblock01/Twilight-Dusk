@@ -20,6 +20,9 @@
   "item.twilight_dusk.dusk_frog_spawn_egg": "暮光青蛙刷怪蛋",
   "item.twilight_dusk.dusk_tadpole_bucket": "暮光蝌蚪桶",
   "item.twilight_dusk.maze_gel": "迷宫凝胶",
+  "item.twilight_dusk.extreme_cold_ice_bones": "极寒冰骨",
+  "item.twilight_dusk.rusted_iron_sheet": "锈蚀铁皮",
+  "item.twilight_dusk.time_watch": "时光怀表",
   "curios.identifier.medal": "勋章",
   "curios.modifiers.medal": "佩戴勋章时：",
   "tooltip.twilight_dusk.hold_shift": "§5按住 §6Shift§5 查看详情。",
@@ -34,6 +37,7 @@
   "tooltip.twilight_dusk.frigid_medal.desc": "§5- §6+1.5§5 点护甲值\n§5- §6+1§5 点盔甲韧性\n§5- 受到的冰冻伤害降低 §670%§5\n§5- 攻击时，将 §620%§5 的伤害转化为冰冻伤害\n§5- 寒冷群系中受到的伤害降低 §610%§5",
   "tooltip.twilight_dusk.knight_medal.desc": "§5- §6+3§5 点护甲值\n§5- §6+2§5 点盔甲韧性\n§5- §6+2§5 点攻击伤害\n§5- 攻击身着护甲的目标时，额外造成 §620%§5 伤害\n§5- 命中时使目标获得 §65§5 秒缓慢与 §63§5 秒虚弱",
   "tooltip.twilight_dusk.blazing_medal.desc": "§5- §6+1.5§5 点护甲值\n§5- §6+1§5 点盔甲韧性\n§5- §6+2§5 点攻击伤害\n§5- 免疫火焰伤害\n§5- 攻击着火的目标时，额外造成 §620%§5 伤害\n§5- 炎热群系中受到的伤害降低 §610%§5",
+  "tooltip.twilight_dusk.time_watch.desc": "§5- 佩戴时，加速周围 §622×22×22§5 范围内的随机刻",
   "twilight_dusk.flask.empty": "空",
   "twilight_dusk.flask.empty_hint": "将药水拖到药水瓶上右键即可装填"
 }
