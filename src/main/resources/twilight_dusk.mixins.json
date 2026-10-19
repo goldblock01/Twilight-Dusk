@@ -17,7 +17,9 @@
     "IceBlockMixin",
     "ServerAdvancementManagerMixin"
   ],
-  "client": [],
+  "client": [
+    "GuiGraphicsMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
