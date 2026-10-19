@@ -1,0 +1,11 @@
+{
+  "type": "twilight_dusk:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:entities/snow_queen"
+    }
+  ],
+  "item": "twilight_dusk:aurora_ice_heart",
+  "count": 1
+}

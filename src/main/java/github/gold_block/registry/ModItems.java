@@ -97,6 +97,9 @@ public class ModItems {
     public static final RegistryObject<Item> RUSTED_IRON_SHEET = ITEMS.register("rusted_iron_sheet",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> AURORA_ICE_HEART = ITEMS.register("aurora_ice_heart",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> TIME_WATCH = ITEMS.register("time_watch",
             () -> new TimeWatchItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 

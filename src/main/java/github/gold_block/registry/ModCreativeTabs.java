@@ -53,6 +53,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.MAZE_GEL.get());
                 output.accept(ModItems.EXTREME_COLD_ICE_BONES.get());
                 output.accept(ModItems.RUSTED_IRON_SHEET.get());
+                output.accept(ModItems.AURORA_ICE_HEART.get());
                 output.accept(ModItems.TIME_WATCH.get());
                 output.accept(ModItems.BURST_SCEPTER.get());
                 acceptEnchanted(output, ModItems.TOWER_DESTROYER.get(),
