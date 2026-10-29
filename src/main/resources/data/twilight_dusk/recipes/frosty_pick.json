@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "CAC",
-    "CB ",
+    "CBC",
+    "CA ",
     " A "
   ],
   "key": {
@@ -11,7 +11,7 @@
       "item": "twilight_dusk:extreme_cold_ice_bones"
     },
     "B": {
-      "item": "twilightforest:alpha_yeti_fur"
+      "item": "twilight_dusk:aurora_ice_heart"
     },
     "C": {
       "item": "minecraft:blue_ice"

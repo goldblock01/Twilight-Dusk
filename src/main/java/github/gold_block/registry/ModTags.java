@@ -17,6 +17,9 @@ public class ModTags {
     public static final TagKey<Enchantment> BANNED_ENCHANTS = TagKey.create(Registries.ENCHANTMENT,
             new ResourceLocation(TwilightDusk.MODID, "banned_enchants"));
 
+    public static final TagKey<DamageType> MAGIC = TagKey.create(Registries.DAMAGE_TYPE,
+            new ResourceLocation(TwilightDusk.MODID, "magic"));
+
     public static final TagKey<DamageType> FREEZING = TagKey.create(Registries.DAMAGE_TYPE,
             new ResourceLocation(TwilightDusk.MODID, "freezing"));
 

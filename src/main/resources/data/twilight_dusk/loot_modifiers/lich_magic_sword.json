@@ -1,0 +1,14 @@
+{
+  "type": "twilight_dusk:lich_sword",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:entities/lich"
+    },
+    {
+      "condition": "minecraft:random_chance_with_looting",
+      "chance": 0.3,
+      "looting_multiplier": 0.05
+    }
+  ]
+}

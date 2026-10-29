@@ -12,16 +12,13 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import twilightforest.entity.boss.AlphaYeti;
 import twilightforest.entity.monster.CarminiteGolem;
-import twilightforest.entity.monster.Yeti;
 
 @Mod.EventBusSubscriber(modid = TwilightDusk.MODID)
 public class MonsterDropEvents {
 
     private static final float BASE_CHANCE = 0.1F;
     private static final float LOOTING_CHANCE = 0.03F;
-    private static final int ALPHA_YETI_BONES = 18;
 
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event) {
@@ -30,11 +27,7 @@ public class MonsterDropEvents {
             if (victim.level().isClientSide()) {
                 return;
             }
-            if (victim instanceof AlphaYeti) {
-                victim.spawnAtLocation(new ItemStack(ModItems.EXTREME_COLD_ICE_BONES.get(), ALPHA_YETI_BONES));
-            } else if (victim instanceof Yeti) {
-                drop(victim, event, ModItems.EXTREME_COLD_ICE_BONES.get(), 1, 2);
-            } else if (victim instanceof CarminiteGolem) {
+            if (victim instanceof CarminiteGolem) {
                 drop(victim, event, ModItems.RUSTED_IRON_SHEET.get(), 1, 3);
             }
         });

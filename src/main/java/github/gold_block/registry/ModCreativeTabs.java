@@ -27,6 +27,8 @@ public class ModCreativeTabs {
                 output.accept(ModItems.PHANTOM_SWORD.get());
                 output.accept(ModItems.PHANTOM_PICKAXE.get());
                 output.accept(ModItems.PHANTOM_AXE.get());
+                output.accept(ModItems.PHANTOM_KNIGHT_SPEAR.get());
+                output.accept(ModItems.KNIGHT_SPEAR.get());
                 output.accept(ModItems.FIERY_AXE.get());
                 output.accept(ModItems.FIERY_SHOVEL.get());
                 output.accept(ModItems.FIERY_SCYTHE.get());
@@ -36,6 +38,12 @@ public class ModCreativeTabs {
                         new EnchantmentInstance(Enchantments.UNBREAKING, 3));
                 acceptEnchanted(output, ModItems.NAGA_CURVED_SWORD.get(),
                         new EnchantmentInstance(Enchantments.MOB_LOOTING, 3));
+                output.accept(ModItems.KNIGHT_HAMMER.get());
+                output.accept(ModItems.KNIGHT_ARROW.get());
+                output.accept(ModItems.PHANTOM_KNIGHT_ARROW.get());
+                acceptEnchanted(output, ModItems.MAGIC_SWORD.get(),
+                        new EnchantmentInstance(Enchantments.SMITE, 2),
+                        new EnchantmentInstance(Enchantments.UNBREAKING, 2));
                 output.accept(ModItems.MEDAL.get());
                 output.accept(ModItems.TWILIGHT_MEDAL.get());
                 output.accept(ModItems.FRIGID_MEDAL.get());

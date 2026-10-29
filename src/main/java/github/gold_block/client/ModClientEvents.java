@@ -19,6 +19,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import twilightforest.client.renderer.entity.CustomProjectileTextureRenderer;
+import twilightforest.client.renderer.entity.DefaultArrowRenderer;
 import twilightforest.init.TFEntities;
 import twilightforest.init.TFItems;
 
@@ -28,6 +29,8 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.DUSK_FROG.get(), FrogRenderer::new);
+        event.registerEntityRenderer(ModEntities.KNIGHT_ARROW.get(), DefaultArrowRenderer::new);
+        event.registerEntityRenderer(ModEntities.PHANTOM_KNIGHT_ARROW.get(), DefaultArrowRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_TADPOLE.get(), DuskTadpoleRenderer::new);
         event.registerEntityRenderer(TFEntities.SNOW_QUEEN.get(), AbaiQueenRenderer::new);
         event.registerEntityRenderer(ModEntities.BURST_BOLT.get(),

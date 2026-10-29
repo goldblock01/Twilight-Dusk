@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import github.gold_block.registry.ModBlocks;
 import github.gold_block.registry.ModCreativeTabs;
 import github.gold_block.registry.ModEntities;
+import github.gold_block.registry.ModEffects;
 import github.gold_block.registry.ModItems;
 import github.gold_block.registry.ModLootModifiers;
 import github.gold_block.twilightlootr.init.TwilightLootrRegistry;
@@ -25,6 +26,7 @@ public class TwilightDusk {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(modEventBus);
+        ModEffects.MOB_EFFECTS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModEntities.FROG_VARIANTS.register(modEventBus);

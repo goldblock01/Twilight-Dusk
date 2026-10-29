@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "ABA",
+    " C "
+  ],
+  "key": {
+    "A": {
+      "item": "twilightforest:knightmetal_ingot"
+    },
+    "B": {
+      "item": "twilightforest:knightmetal_block"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "twilight_dusk:knight_hammer",
+    "count": 1
+  }
+}

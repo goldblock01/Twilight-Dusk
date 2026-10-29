@@ -2,6 +2,8 @@ package github.gold_block.registry;
 
 import github.gold_block.TwilightDusk;
 import github.gold_block.entity.BurstBolt;
+import github.gold_block.entity.KnightArrow;
+import github.gold_block.entity.PhantomKnightArrow;
 import github.gold_block.entity.DuskFrog;
 import github.gold_block.entity.DuskFrogAi;
 import github.gold_block.entity.DuskTadpole;
@@ -32,6 +34,14 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DuskTadpole>> DUSK_TADPOLE = ENTITY_TYPES.register("dusk_tadpole",
             () -> EntityType.Builder.of(DuskTadpole::new, MobCategory.CREATURE)
                     .sized(DuskTadpole.HITBOX_WIDTH, DuskTadpole.HITBOX_HEIGHT).clientTrackingRange(10).build("dusk_tadpole"));
+
+    public static final RegistryObject<EntityType<KnightArrow>> KNIGHT_ARROW = ENTITY_TYPES.register("knight_arrow",
+            () -> EntityType.Builder.<KnightArrow>of(KnightArrow::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build("knight_arrow"));
+
+    public static final RegistryObject<EntityType<PhantomKnightArrow>> PHANTOM_KNIGHT_ARROW = ENTITY_TYPES.register("phantom_knight_arrow",
+            () -> EntityType.Builder.<PhantomKnightArrow>of(PhantomKnightArrow::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build("phantom_knight_arrow"));
 
     public static final RegistryObject<EntityType<BurstBolt>> BURST_BOLT = ENTITY_TYPES.register("burst_bolt",
             () -> EntityType.Builder.<BurstBolt>of(BurstBolt::new, MobCategory.MISC)

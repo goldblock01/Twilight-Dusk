@@ -1,0 +1,15 @@
+{
+  "parent": "twilight_dusk:item/knight_spear_inventory",
+  "textures": {
+    "particle": "twilight_dusk:item/knight_spear"
+  },
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "twilight_dusk:item/knight_spear_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "twilight_dusk:item/knight_spear_inventory"
+    }
+  }
+}

@@ -7,6 +7,11 @@ import github.gold_block.item.FieryScytheItem;
 import github.gold_block.item.FieryShovelItem;
 import github.gold_block.item.FrostyPickItem;
 import github.gold_block.item.NagaCurvedSwordItem;
+import github.gold_block.item.KnightHammerItem;
+import github.gold_block.item.KnightArrowItem;
+import github.gold_block.item.KnightSpearItem;
+import github.gold_block.item.PhantomKnightSpearItem;
+import github.gold_block.item.MagicSwordItem;
 import github.gold_block.item.PhantomAxeItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
@@ -111,6 +116,24 @@ public class ModItems {
 
     public static final RegistryObject<Item> NAGA_CURVED_SWORD = ITEMS.register("naga_curved_sword",
             () -> new NagaCurvedSwordItem(new Item.Properties().durability(250).rarity(RARITY)));
+
+    public static final RegistryObject<Item> PHANTOM_KNIGHT_SPEAR = ITEMS.register("phantom_knight_spear",
+            () -> new PhantomKnightSpearItem(new Item.Properties().durability(1240).rarity(RARITY)));
+
+    public static final RegistryObject<Item> KNIGHT_SPEAR = ITEMS.register("knight_spear",
+            () -> new KnightSpearItem(new Item.Properties().durability(1240).rarity(RARITY)));
+
+    public static final RegistryObject<Item> KNIGHT_ARROW = ITEMS.register("knight_arrow",
+            () -> new KnightArrowItem(false, new Item.Properties()));
+
+    public static final RegistryObject<Item> PHANTOM_KNIGHT_ARROW = ITEMS.register("phantom_knight_arrow",
+            () -> new KnightArrowItem(true, new Item.Properties().rarity(RARITY)));
+
+    public static final RegistryObject<Item> MAGIC_SWORD = ITEMS.register("magic_sword",
+            () -> new MagicSwordItem(new Item.Properties().durability(250).rarity(RARITY)));
+
+    public static final RegistryObject<Item> KNIGHT_HAMMER = ITEMS.register("knight_hammer",
+            () -> new KnightHammerItem(new Item.Properties().rarity(RARITY)));
 
     public static final RegistryObject<Item> TOWER_DESTROYER = ITEMS.register("tower_destroyer",
             () -> new TowerDestroyerItem(new Item.Properties().durability(1080).rarity(RARITY)));

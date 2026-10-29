@@ -3,6 +3,8 @@ package github.gold_block.registry;
 import com.mojang.serialization.Codec;
 import github.gold_block.TwilightDusk;
 import github.gold_block.loot.AddItemModifier;
+import github.gold_block.loot.YetiBonesModifier;
+import github.gold_block.loot.LichSwordModifier;
 import github.gold_block.loot.FieryToolSmeltingModifier;
 import github.gold_block.loot.TowerDestroyerReplaceModifier;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
@@ -20,6 +22,12 @@ public class ModLootModifiers {
 
     public static final RegistryObject<Codec<TowerDestroyerReplaceModifier>> TOWER_DESTROYER_REPLACE =
             LOOT_MODIFIERS.register("tower_destroyer_replace", () -> TowerDestroyerReplaceModifier.CODEC);
+
+    public static final RegistryObject<Codec<YetiBonesModifier>> YETI_BONES =
+            LOOT_MODIFIERS.register("yeti_bones", () -> YetiBonesModifier.CODEC);
+
+    public static final RegistryObject<Codec<LichSwordModifier>> LICH_SWORD =
+            LOOT_MODIFIERS.register("lich_sword", () -> LichSwordModifier.CODEC);
 
     /** 通用「往表里加一件东西」；具体加什么、对哪张表生效都由 JSON 决定 */
     public static final RegistryObject<Codec<AddItemModifier>> ADD_ITEM =
