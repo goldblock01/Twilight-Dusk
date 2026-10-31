@@ -51,12 +51,15 @@ public final class SpearAnimations {
     }
 
     public static void firstPersonAttack(float attackTime, PoseStack poseStack, int handSign) {
-        float raise = inOutSine(progress(attackTime, 0.0F, 0.05F));
-        float thrust = outBack(progress(attackTime, 0.05F, 0.2F));
-        float settle = inOutExpo(progress(attackTime, 0.4F, 1.0F));
-        poseStack.translate(handSign * 0.1F * (raise - thrust), -0.075F * (raise - settle), 0.65F * (raise - thrust));
-        poseStack.mulPose(Axis.XP.rotationDegrees(-70.0F * (raise - settle)));
-        poseStack.translate(0.0D, 0.0D, -0.25D * (settle - thrust));
+        float startingAmount = inOutSine(progress(attackTime, 0.0F, 0.05F));
+        float middleAmount = outBack(progress(attackTime, 0.05F, 0.2F));
+        float endingAmount = inOutExpo(progress(attackTime, 0.4F, 1.0F));
+        poseStack.translate(
+                (float) handSign * 0.1F * (startingAmount - middleAmount),
+                -0.075F * (startingAmount - endingAmount),
+                0.65F * (startingAmount - middleAmount));
+        poseStack.mulPose(Axis.XP.rotationDegrees(-70.0F * (startingAmount - endingAmount)));
+        poseStack.translate(0.0F, 0.0F, -0.25F * (endingAmount - middleAmount));
     }
 
     public static void firstPersonUse(float ticksSinceHit, PoseStack poseStack, float ticksUsingItem,
@@ -81,20 +84,20 @@ public final class SpearAnimations {
     }
 
     public static void thirdPersonAttackHand(float attackTime, ModelPart attackArm) {
-        float raise = inOutSine(progress(attackTime, 0.0F, 0.05F));
-        float thrust = inQuad(progress(attackTime, 0.05F, 0.2F));
-        float settle = inOutExpo(progress(attackTime, 0.4F, 1.0F));
-        attackArm.xRot += (90.0F * raise - 120.0F * thrust + 30.0F * settle) * DEG_TO_RAD;
+        float prepare = inOutSine(progress(attackTime, 0.0F, 0.05F));
+        float attack = inQuad(progress(attackTime, 0.05F, 0.2F));
+        float retract = inOutExpo(progress(attackTime, 0.4F, 1.0F));
+        attackArm.xRot += (90.0F * prepare - 120.0F * attack + 30.0F * retract) * DEG_TO_RAD;
     }
 
     public static void thirdPersonAttackItem(float attackTime, PoseStack poseStack) {
         if (attackTime <= 0.0F) {
             return;
         }
-        float thrust = inQuad(progress(attackTime, 0.05F, 0.2F));
-        float settle = inOutExpo(progress(attackTime, 0.4F, 1.0F));
-        poseStack.rotateAround(Axis.XN.rotationDegrees(70.0F * (thrust - settle)), 0.0F, -0.125F, 0.125F);
-        poseStack.translate(0.0F, 0.38F * (thrust - settle), 0.0F);
+        float attack = inQuad(progress(attackTime, 0.05F, 0.2F));
+        float retract = inOutExpo(progress(attackTime, 0.4F, 1.0F));
+        poseStack.rotateAround(Axis.XN.rotationDegrees(70.0F * (attack - retract)), 0.0F, -0.125F, 0.125F);
+        poseStack.translate(0.0F, 0.38F * (attack - retract), 0.0F);
     }
 
     public static void thirdPersonUseItem(float attackTime, float ticksSinceHit, PoseStack poseStack,

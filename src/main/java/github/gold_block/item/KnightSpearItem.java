@@ -75,7 +75,7 @@ public class KnightSpearItem extends SwordItem {
         super(tier, bonusDamage, attackSpeed - 4.0F, properties);
         this.profile = profile;
         this.armoredMagicDamage = armoredMagicDamage;
-        this.stabDurationTicks = Math.max(1, Math.round(20.0F / attackSpeed));
+        this.stabDurationTicks = 20;
     }
 
     public static boolean isSuppressingKnockback() {
