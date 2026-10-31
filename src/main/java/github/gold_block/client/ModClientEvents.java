@@ -34,6 +34,7 @@ public class ModClientEvents {
         event.registerEntityRenderer(ModEntities.PHANTOM_KNIGHT_ARROW.get(), DefaultArrowRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_TADPOLE.get(), DuskTadpoleRenderer::new);
         event.registerEntityRenderer(TFEntities.SNOW_QUEEN.get(), AbaiQueenRenderer::new);
+        event.registerEntityRenderer(ModEntities.LOYAL_ABAI.get(), LoyalAbaiRenderer::new);
         event.registerEntityRenderer(ModEntities.BURST_BOLT.get(),
                 ctx -> new CustomProjectileTextureRenderer(ctx, BURST_BOLT_TEXTURE));
     }

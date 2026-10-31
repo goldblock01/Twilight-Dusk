@@ -7,7 +7,6 @@ import github.gold_block.util.EventGuard;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,19 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = TwilightDusk.MODID)
 public final class KnightSpearEvents {
 
-    private static final float SPRINT_BONUS = 0.25F;
-
     private KnightSpearEvents() {
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGH)
-    public static void onSprintAttack(LivingHurtEvent event) {
-        EventGuard.run(() -> {
-            LivingEntity attacker = spearAttacker(event);
-            if (attacker instanceof Player player && player.isSprinting()) {
-                event.setAmount(event.getAmount() * (1.0F + SPRINT_BONUS));
-            }
-        });
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
@@ -44,7 +31,6 @@ public final class KnightSpearEvents {
             int invulnerableTime = victim.invulnerableTime;
             victim.invulnerableTime = 0;
             try {
-                // 固定的额外魔法伤害单独结算，不跟随冲刺倍率再次放大。
                 victim.hurt(magic, spear.getArmoredMagicDamage());
             } finally {
                 if (victim.invulnerableTime < invulnerableTime) {

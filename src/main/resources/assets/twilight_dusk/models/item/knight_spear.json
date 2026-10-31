@@ -1,15 +1,17 @@
 {
-  "parent": "twilight_dusk:item/knight_spear_inventory",
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
   "textures": {
     "particle": "twilight_dusk:item/knight_spear"
   },
-  "loader": "forge:separate_transforms",
   "base": {
-    "parent": "twilight_dusk:item/knight_spear_handheld"
+    "parent": "twilight_dusk:item/knight_spear_inventory"
   },
   "perspectives": {
-    "gui": {
-      "parent": "twilight_dusk:item/knight_spear_inventory"
-    }
+    "firstperson_righthand": { "parent": "twilight_dusk:item/knight_spear_in_hand" },
+    "firstperson_lefthand": { "parent": "twilight_dusk:item/knight_spear_in_hand" },
+    "thirdperson_righthand": { "parent": "twilight_dusk:item/knight_spear_in_hand" },
+    "thirdperson_lefthand": { "parent": "twilight_dusk:item/knight_spear_in_hand" },
+    "head": { "parent": "twilight_dusk:item/knight_spear_in_hand" }
   }
 }

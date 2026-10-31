@@ -8,6 +8,7 @@ import github.gold_block.entity.DuskFrog;
 import github.gold_block.entity.SunsetElf;
 import github.gold_block.entity.DuskFrogAi;
 import github.gold_block.entity.DuskTadpole;
+import github.gold_block.entity.LoyalAbai;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -51,6 +52,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BurstBolt>> BURST_BOLT = ENTITY_TYPES.register("burst_bolt",
             () -> EntityType.Builder.<BurstBolt>of(BurstBolt::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("burst_bolt"));
+
+    public static final RegistryObject<EntityType<LoyalAbai>> LOYAL_ABAI = ENTITY_TYPES.register("loyal_abai",
+            () -> EntityType.Builder.of(LoyalAbai::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.8F).clientTrackingRange(8).build("loyal_abai"));
 
     public static final RegistryObject<FrogVariant> SWAMP_VARIANT = FROG_VARIANTS.register("swamp",
             () -> new FrogVariant(new ResourceLocation(TwilightDusk.MODID, "textures/entity/frog/swamp_frog.png")));

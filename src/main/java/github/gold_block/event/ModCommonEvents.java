@@ -15,6 +15,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.world.entity.animal.frog.Tadpole;
 import net.minecraft.world.entity.SpawnPlacements;
+import twilightforest.entity.monster.LoyalZombie;
 
 @Mod.EventBusSubscriber(modid = TwilightDusk.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModCommonEvents {
@@ -24,6 +25,7 @@ public class ModCommonEvents {
         event.put(ModEntities.SUNSET_ELF.get(), Allay.createAttributes().build());
         event.put(ModEntities.DUSK_FROG.get(), Frog.createAttributes().build());
         event.put(ModEntities.DUSK_TADPOLE.get(), Tadpole.createAttributes().build());
+        event.put(ModEntities.LOYAL_ABAI.get(), LoyalZombie.registerAttributes().build());
     }
 
     @SubscribeEvent

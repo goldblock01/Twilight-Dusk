@@ -1,0 +1,24 @@
+{
+  "spear_use": {
+    "sounds": [
+      "item/spear/use"
+    ],
+    "subtitle": "subtitles.twilight_dusk.spear_use"
+  },
+  "spear_attack": {
+    "sounds": [
+      "item/spear/attack1",
+      "item/spear/attack2",
+      "item/spear/attack3"
+    ],
+    "subtitle": "subtitles.twilight_dusk.spear_attack"
+  },
+  "spear_hit": {
+    "sounds": [
+      "item/spear/hit1",
+      "item/spear/hit2",
+      "item/spear/hit3"
+    ],
+    "subtitle": "subtitles.twilight_dusk.spear_hit"
+  }
+}

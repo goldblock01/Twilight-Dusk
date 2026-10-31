@@ -20,10 +20,22 @@
     "KnightArrowArmorMixin",
     "KnightArrowPlayerArmorMixin",
     "KnightArrowEnchantmentMixin",
-    "PhantomArrowGravityMixin"
+    "PhantomArrowGravityMixin",
+    "ZombieWandItemMixin",
+    "SpearAttackMixin",
+    "SpearSwingDurationMixin",
+    "SpearKnockbackMixin"
   ],
   "client": [
-    "GuiGraphicsMixin"
+    "GuiGraphicsMixin",
+    "SpearKineticHitMixin",
+    "SpearChargeMovementMixin",
+    "SpearSwingAnimationMixin",
+    "SpearChargeArmMixin",
+    "MinecraftSpearAttackMixin",
+    "SpearHandRenderMixin",
+    "SpearThirdPersonItemMixin",
+    "SpearPickMixin"
   ],
   "injectors": {
     "defaultRequire": 1

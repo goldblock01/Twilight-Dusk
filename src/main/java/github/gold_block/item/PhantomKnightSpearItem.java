@@ -5,7 +5,8 @@ import github.gold_block.util.PhantomTier;
 public class PhantomKnightSpearItem extends KnightSpearItem implements PhantomEnchantRestriction {
 
     public PhantomKnightSpearItem(Properties properties) {
-        // 玩家基础 1 + 幻影材质 4 + 参数 3 = 8；对有护甲目标追加 3 点魔法伤害。
-        super(PhantomTier.PHANTOM, 3, 3.0F, properties);
+        super(PhantomTier.PHANTOM, 1, 0.96F,
+                ChargeProfile.of(0.35F, 2.25F, 6.5F, 5.0F, 8.0F, 1.3F),
+                3.0F, properties);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "twilight_dusk:item/spear_in_hand",
+  "textures": {
+    "layer0": "twilight_dusk:item/knight_spear_handheld",
+    "particle": "twilight_dusk:item/knight_spear"
+  }
+}

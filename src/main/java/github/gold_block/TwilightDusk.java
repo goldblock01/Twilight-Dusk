@@ -1,12 +1,14 @@
 package github.gold_block;
 
 import com.mojang.logging.LogUtils;
+import github.gold_block.network.ModNetwork;
 import github.gold_block.registry.ModBlocks;
 import github.gold_block.registry.ModCreativeTabs;
 import github.gold_block.registry.ModEntities;
 import github.gold_block.registry.ModEffects;
 import github.gold_block.registry.ModItems;
 import github.gold_block.registry.ModLootModifiers;
+import github.gold_block.registry.ModSounds;
 import github.gold_block.registry.ModStructurePlacements;
 import github.gold_block.twilightlootr.init.TwilightLootrRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -34,11 +36,13 @@ public class TwilightDusk {
         ModEntities.SENSORS.register(modEventBus);
         ModCreativeTabs.TABS.register(modEventBus);
         ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
+        ModSounds.SOUND_EVENTS.register(modEventBus);
         ModStructurePlacements.STRUCTURE_PLACEMENTS.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         TwilightLootrRegistry.register(modEventBus);
+        ModNetwork.register();
         LOGGER.info("Twilight Dusk loaded");
     }
 }
