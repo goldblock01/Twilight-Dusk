@@ -2,6 +2,8 @@ package github.gold_block.event;
 
 import github.gold_block.TwilightDusk;
 import github.gold_block.entity.DuskFrog;
+import github.gold_block.entity.SunsetElf;
+import net.minecraft.world.entity.animal.allay.Allay;
 import github.gold_block.registry.ModEntities;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.MobSpawnType;
@@ -19,12 +21,16 @@ public class ModCommonEvents {
 
     @SubscribeEvent
     public static void onRegisterAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.SUNSET_ELF.get(), Allay.createAttributes().build());
         event.put(ModEntities.DUSK_FROG.get(), Frog.createAttributes().build());
         event.put(ModEntities.DUSK_TADPOLE.get(), Tadpole.createAttributes().build());
     }
 
     @SubscribeEvent
     public static void onRegisterSpawnPlacements(SpawnPlacementRegisterEvent event) {
+        event.register(ModEntities.SUNSET_ELF.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SunsetElf::checkSunsetElfSpawnRules,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.DUSK_FROG.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, DuskFrog::checkDuskFrogSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.REPLACE);

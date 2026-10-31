@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "twilight_dusk:library",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "twilight_dusk:medium_hill_frequency",
+    "salt": 73491002,
+    "offset_x": 0,
+    "offset_z": 4
+  }
+}

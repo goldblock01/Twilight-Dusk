@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "twilightforest:enchanted_forest",
+  "spawners": [
+    {
+      "type": "twilight_dusk:sunset_elf",
+      "weight": 20,
+      "minCount": 2,
+      "maxCount": 4
+    }
+  ]
+}

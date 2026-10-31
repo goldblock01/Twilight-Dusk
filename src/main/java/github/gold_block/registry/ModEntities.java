@@ -5,6 +5,7 @@ import github.gold_block.entity.BurstBolt;
 import github.gold_block.entity.KnightArrow;
 import github.gold_block.entity.PhantomKnightArrow;
 import github.gold_block.entity.DuskFrog;
+import github.gold_block.entity.SunsetElf;
 import github.gold_block.entity.DuskFrogAi;
 import github.gold_block.entity.DuskTadpole;
 import net.minecraft.core.registries.Registries;
@@ -26,6 +27,10 @@ public class ModEntities {
             DeferredRegister.create(Registries.FROG_VARIANT, TwilightDusk.MODID);
     public static final DeferredRegister<SensorType<?>> SENSORS =
             DeferredRegister.create(ForgeRegistries.SENSOR_TYPES, TwilightDusk.MODID);
+
+    public static final RegistryObject<EntityType<SunsetElf>> SUNSET_ELF = ENTITY_TYPES.register("sunset_elf",
+            () -> EntityType.Builder.of(SunsetElf::new, MobCategory.CREATURE)
+                    .sized(0.35F, 0.6F).clientTrackingRange(8).updateInterval(2).build("sunset_elf"));
 
     public static final RegistryObject<EntityType<DuskFrog>> DUSK_FROG = ENTITY_TYPES.register("dusk_frog",
             () -> EntityType.Builder.of(DuskFrog::new, MobCategory.CREATURE)

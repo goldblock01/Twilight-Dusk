@@ -1,4 +1,11 @@
 {
+  "structure.twilight_dusk.grave": "墓地",
+  "structure.twilight_dusk.library": "图书馆",
+  "structure.twilight_dusk.cave": "洞穴",
+
+  "entity.twilight_dusk.sunset_elf": "夕灵",
+  "item.twilight_dusk.sunset_elf_spawn_egg": "夕灵刷怪蛋",
+
   "itemGroup.twilight_dusk": "暮色：黄昏",
   "item.twilight_dusk.phantom_ingot": "幻影骑士金属锭",
   "item.twilight_dusk.phantom_armor_plate": "幻影盔甲板",

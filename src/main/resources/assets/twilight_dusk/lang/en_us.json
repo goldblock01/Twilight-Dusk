@@ -1,4 +1,11 @@
 {
+  "structure.twilight_dusk.grave": "Graveyard",
+  "structure.twilight_dusk.library": "Library",
+  "structure.twilight_dusk.cave": "Cave",
+
+  "entity.twilight_dusk.sunset_elf": "Sunset Elf",
+  "item.twilight_dusk.sunset_elf_spawn_egg": "Sunset Elf Spawn Egg",
+
   "itemGroup.twilight_dusk": "Twilight: Dusk",
   "item.twilight_dusk.phantom_ingot": "Phantom Knight Ingot",
   "item.twilight_dusk.phantom_armor_plate": "Phantom Armor Plate",

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "twilight_dusk:cave",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "twilight_dusk:medium_hill_frequency",
+    "salt": 73491003,
+    "offset_x": -4,
+    "offset_z": 0
+  }
+}

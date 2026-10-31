@@ -7,6 +7,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.WorldGenRegion;
+import net.minecraft.world.level.StructureManager;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
@@ -71,8 +74,24 @@ public class DuskFrog extends Frog {
 
     public static boolean checkDuskFrogSpawnRules(EntityType<DuskFrog> type, LevelAccessor level,
                                                   MobSpawnType reason, BlockPos pos, RandomSource random) {
-        return level.getBlockState(pos.below()).is(BlockTags.FROGS_SPAWNABLE_ON)
-                && level.getRawBrightness(pos, 0) > 4;
+        if (!level.getBlockState(pos.below()).is(BlockTags.FROGS_SPAWNABLE_ON)
+                || level.getRawBrightness(pos, 0) <= 4) {
+            return false;
+        }
+        // 自然刷新和新区块生成均排除迷宫完整包围盒，包含结构内部的空隙。
+        if ((reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)
+                && level instanceof ServerLevelAccessor serverLevel) {
+            StructureManager structures = serverLevel.getLevel().structureManager();
+            if (level instanceof WorldGenRegion region) {
+                structures = structures.forWorldGenRegion(region);
+            }
+            Structure labyrinth = level.registryAccess().registryOrThrow(Registries.STRUCTURE)
+                    .get(TFStructures.LABYRINTH);
+            if (labyrinth != null && structures.getStructureAt(pos, labyrinth).isValid()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

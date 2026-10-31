@@ -28,6 +28,7 @@ public class ModClientEvents {
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.SUNSET_ELF.get(), SunsetElfRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_FROG.get(), FrogRenderer::new);
         event.registerEntityRenderer(ModEntities.KNIGHT_ARROW.get(), DefaultArrowRenderer::new);
         event.registerEntityRenderer(ModEntities.PHANTOM_KNIGHT_ARROW.get(), DefaultArrowRenderer::new);
