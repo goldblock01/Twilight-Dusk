@@ -20,5 +20,59 @@
       "item/spear/hit3"
     ],
     "subtitle": "subtitles.twilight_dusk.spear_hit"
+  },
+  "tower_spirit_ambient": {
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/ambient1",
+      {
+        "name": "twilight_dusk:entity/tower_spirit/ambient2",
+        "weight": 3
+      },
+      {
+        "name": "twilight_dusk:entity/tower_spirit/ambient3",
+        "weight": 2
+      },
+      "twilight_dusk:entity/tower_spirit/ambient4",
+      {
+        "name": "twilight_dusk:entity/tower_spirit/ambient5",
+        "weight": 2
+      },
+      "twilight_dusk:entity/tower_spirit/ambient6",
+      {
+        "name": "twilight_dusk:entity/tower_spirit/ambient7",
+        "weight": 2
+      },
+      "twilight_dusk:entity/tower_spirit/ambient8",
+      "twilight_dusk:entity/tower_spirit/ambient9",
+      "twilight_dusk:entity/tower_spirit/ambient10",
+      "twilight_dusk:entity/tower_spirit/ambient11",
+      {
+        "name": "twilight_dusk:entity/tower_spirit/ambient12",
+        "weight": 2
+      },
+      {
+        "name": "twilight_dusk:entity/tower_spirit/ambient13",
+        "weight": 2
+      },
+      "twilight_dusk:entity/tower_spirit/ambient14"
+    ],
+    "subtitle": "subtitles.twilight_dusk.tower_spirit.ambient"
+  },
+  "tower_spirit_hurt": {
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/hurt1",
+      "twilight_dusk:entity/tower_spirit/hurt2",
+      "twilight_dusk:entity/tower_spirit/hurt3",
+      "twilight_dusk:entity/tower_spirit/hurt4",
+      "twilight_dusk:entity/tower_spirit/hurt5",
+      "twilight_dusk:entity/tower_spirit/hurt6"
+    ],
+    "subtitle": "subtitles.twilight_dusk.tower_spirit.hurt"
+  },
+  "tower_spirit_death": {
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/death"
+    ],
+    "subtitle": "subtitles.twilight_dusk.tower_spirit.death"
   }
 }

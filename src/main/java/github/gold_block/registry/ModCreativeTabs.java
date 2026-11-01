@@ -55,6 +55,7 @@ public class ModCreativeTabs {
                 output.accept(TFBlocks.KEEPSAKE_CASKET.get().asItem());
                 output.accept(TFItems.BRITTLE_FLASK.get());
                 output.accept(TFItems.GREATER_FLASK.get());
+                output.accept(ModItems.TOWER_SPIRIT_SPAWN_EGG.get());
                 output.accept(ModItems.SUNSET_ELF_SPAWN_EGG.get());
                 output.accept(ModItems.DUSK_FROG_SPAWN_EGG.get());
                 output.accept(ModItems.DUSK_FROGSPAWN.get());

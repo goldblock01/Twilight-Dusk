@@ -1,4 +1,10 @@
 {
+  "entity.twilight_dusk.tower_spirit": "Tower Spirit",
+  "item.twilight_dusk.tower_spirit_spawn_egg": "Tower Spirit Spawn Egg",
+  "subtitles.twilight_dusk.tower_spirit.ambient": "Tower Spirit murmurs",
+  "subtitles.twilight_dusk.tower_spirit.hurt": "Tower Spirit hurts",
+  "subtitles.twilight_dusk.tower_spirit.death": "Tower Spirit dies",
+
   "structure.twilight_dusk.grave": "Graveyard",
   "structure.twilight_dusk.library": "Library",
   "structure.twilight_dusk.cave": "Cave",

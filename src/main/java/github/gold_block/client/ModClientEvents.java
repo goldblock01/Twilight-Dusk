@@ -27,7 +27,13 @@ import twilightforest.init.TFItems;
 public class ModClientEvents {
 
     @SubscribeEvent
+    public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(TowerSpiritRenderer.LAYER, TowerSpiritModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.TOWER_SPIRIT.get(), TowerSpiritRenderer::new);
         event.registerEntityRenderer(ModEntities.SUNSET_ELF.get(), SunsetElfRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_FROG.get(), FrogRenderer::new);
         event.registerEntityRenderer(ModEntities.KNIGHT_ARROW.get(), DefaultArrowRenderer::new);

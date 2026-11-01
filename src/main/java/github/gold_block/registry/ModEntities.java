@@ -6,6 +6,7 @@ import github.gold_block.entity.KnightArrow;
 import github.gold_block.entity.PhantomKnightArrow;
 import github.gold_block.entity.DuskFrog;
 import github.gold_block.entity.SunsetElf;
+import github.gold_block.entity.TowerSpirit;
 import github.gold_block.entity.DuskFrogAi;
 import github.gold_block.entity.DuskTadpole;
 import github.gold_block.entity.LoyalAbai;
@@ -28,6 +29,10 @@ public class ModEntities {
             DeferredRegister.create(Registries.FROG_VARIANT, TwilightDusk.MODID);
     public static final DeferredRegister<SensorType<?>> SENSORS =
             DeferredRegister.create(ForgeRegistries.SENSOR_TYPES, TwilightDusk.MODID);
+
+    public static final RegistryObject<EntityType<TowerSpirit>> TOWER_SPIRIT = ENTITY_TYPES.register("tower_spirit",
+            () -> EntityType.Builder.of(TowerSpirit::new, MobCategory.CREATURE)
+                    .sized(4.0F, 4.0F).clientTrackingRange(10).build("tower_spirit"));
 
     public static final RegistryObject<EntityType<SunsetElf>> SUNSET_ELF = ENTITY_TYPES.register("sunset_elf",
             () -> EntityType.Builder.of(SunsetElf::new, MobCategory.CREATURE)

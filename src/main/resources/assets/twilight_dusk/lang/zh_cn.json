@@ -1,4 +1,10 @@
 {
+  "entity.twilight_dusk.tower_spirit": "高塔善灵",
+  "item.twilight_dusk.tower_spirit_spawn_egg": "高塔善灵刷怪蛋",
+  "subtitles.twilight_dusk.tower_spirit.ambient": "高塔善灵：低鸣",
+  "subtitles.twilight_dusk.tower_spirit.hurt": "高塔善灵：受伤",
+  "subtitles.twilight_dusk.tower_spirit.death": "高塔善灵：死亡",
+
   "structure.twilight_dusk.grave": "墓地",
   "structure.twilight_dusk.library": "图书馆",
   "structure.twilight_dusk.cave": "洞穴",

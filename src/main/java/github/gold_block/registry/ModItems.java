@@ -90,6 +90,9 @@ public class ModItems {
             () -> new MobBucketItem(() -> ModEntities.DUSK_TADPOLE.get(), () -> Fluids.WATER,
                     () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> TOWER_SPIRIT_SPAWN_EGG = ITEMS.register("tower_spirit_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TOWER_SPIRIT, 0xFFF0E9, 0xE66F68, new Item.Properties()));
+
     public static final RegistryObject<Item> SUNSET_ELF_SPAWN_EGG = ITEMS.register("sunset_elf_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SUNSET_ELF, 0xC675E8, 0xFFF4A0, new Item.Properties()));
 

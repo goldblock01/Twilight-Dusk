@@ -24,7 +24,10 @@
     "ZombieWandItemMixin",
     "SpearAttackMixin",
     "SpearSwingDurationMixin",
-    "SpearKnockbackMixin"
+    "SpearKnockbackMixin",
+    "LichEquipmentSlotMixin",
+    "LichEquipmentMixin",
+    "LootPoolEntriesAccessor"
   ],
   "client": [
     "GuiGraphicsMixin",
