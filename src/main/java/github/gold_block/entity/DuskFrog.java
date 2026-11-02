@@ -81,13 +81,25 @@ public class DuskFrog extends Frog {
         // 自然刷新和新区块生成均排除迷宫完整包围盒，包含结构内部的空隙。
         if ((reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)
                 && level instanceof ServerLevelAccessor serverLevel) {
-            StructureManager structures = serverLevel.getLevel().structureManager();
-            if (level instanceof WorldGenRegion region) {
-                structures = structures.forWorldGenRegion(region);
-            }
             Structure labyrinth = level.registryAccess().registryOrThrow(Registries.STRUCTURE)
                     .get(TFStructures.LABYRINTH);
-            if (labyrinth != null && structures.getStructureAt(pos, labyrinth).isValid()) {
+            if (labyrinth == null) return true;
+            if (level instanceof WorldGenRegion region) {
+                int chunkX = pos.getX() >> 4;
+                int chunkZ = pos.getZ() >> 4;
+                if (!region.hasChunk(chunkX, chunkZ)) return false;
+                var chunk = region.getChunk(chunkX, chunkZ);
+                // 结构起点可能在区域外；仅查缓存，无法核实的迷宫引用保守禁刷。
+                for (long reference : chunk.getReferencesForStructure(labyrinth)) {
+                    net.minecraft.world.level.ChunkPos startPos = new net.minecraft.world.level.ChunkPos(reference);
+                    var startChunk = region.getChunk(startPos.x, startPos.z,
+                            net.minecraft.world.level.chunk.ChunkStatus.STRUCTURE_STARTS, false);
+                    if (startChunk == null) return false;
+                    var start = startChunk.getStartForStructure(labyrinth);
+                    if (start == null) return false;
+                    if (start.isValid() && start.getBoundingBox().isInside(pos)) return false;
+                }
+            } else if (serverLevel.getLevel().structureManager().getStructureAt(pos, labyrinth).isValid()) {
                 return false;
             }
         }
