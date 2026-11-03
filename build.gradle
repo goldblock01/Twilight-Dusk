@@ -16,6 +16,9 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
+// 内嵌注入支持库，使独立安装也具备移动兼容能力。
+jarJar.enable()
+
 group = mod_group_id
 version = mod_version
 
@@ -75,6 +78,7 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    mavenCentral()
     maven {
         name = 'CurseMaven'
         url = 'https://cursemaven.com'
@@ -94,6 +98,11 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:6855440")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    // 编译时处理包装注入，运行时随包提供相同接口。
+    compileOnly(annotationProcessor('io.github.llamalad7:mixinextras-common:0.5.0'))
+    implementation(jarJar('io.github.llamalad7:mixinextras-forge:0.5.0')) {
+        jarJar.ranged(it, '[0.5.0,)')
+    }
 }
 
 tasks.named('processResources', ProcessResources).configure {

@@ -47,6 +47,13 @@ public class ArrowMixinAuditPlugin implements IMixinConfigPlugin {
     /** 在转换结果中查找箭矢处理调用，对未接入的可选功能输出提示。 */
     @Override
     public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+        if (mixinClassName.endsWith("SpearChargeMovementMixin")) {
+            // 可选注入逐项检查，区分正常启动与移动能力完整接入。
+            twilightdusk$checkMovementHook(targetClass, "$keepChargeInput");
+            twilightdusk$checkMovementHook(targetClass, "$allowSprintWhileCharging");
+            twilightdusk$checkMovementHook(targetClass, "$startSprintWhileCharging");
+            return;
+        }
         String suffix;
         if (mixinClassName.endsWith("KnightArrowArmorMixin") || mixinClassName.endsWith("KnightArrowPlayerArmorMixin")) {
             suffix = "$armorPenetration";
@@ -66,5 +73,17 @@ public class ArrowMixinAuditPlugin implements IMixinConfigPlugin {
         }
         System.err.println("twilight_dusk: optional arrow hook missing: " + mixinClassName
                 + " in " + targetClassName + "; this feature is inactive for the target.");
+    }
+    /** 查找移动处理调用，缺失时提示对应能力已降级，不阻止启动。 */
+    private static void twilightdusk$checkMovementHook(ClassNode targetClass, String suffix) {
+        for (MethodNode method : targetClass.methods) {
+            for (AbstractInsnNode instruction : method.instructions) {
+                if (instruction instanceof MethodInsnNode call && call.name.endsWith(suffix)) {
+                    return;
+                }
+            }
+        }
+        System.err.println("twilight_dusk: optional spear movement hook missing: " + suffix
+                + " in " + targetClass.name + "; this movement feature is inactive.");
     }
 }
