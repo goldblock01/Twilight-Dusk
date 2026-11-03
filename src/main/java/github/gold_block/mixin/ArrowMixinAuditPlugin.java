@@ -61,6 +61,10 @@ public class ArrowMixinAuditPlugin implements IMixinConfigPlugin {
             suffix = "$enchantmentPenetration";
         } else if (mixinClassName.endsWith("PhantomArrowGravityMixin")) {
             suffix = "$halfGravity";
+        } else if (mixinClassName.endsWith("GuiGraphicsMixin")) {
+            suffix = "$guiModel";
+        } else if (mixinClassName.endsWith("SpearPickMixin")) {
+            suffix = "$spearEntityReach";
         } else {
             return;
         }
@@ -71,7 +75,10 @@ public class ArrowMixinAuditPlugin implements IMixinConfigPlugin {
                 }
             }
         }
-        System.err.println("twilight_dusk: optional arrow hook missing: " + mixinClassName
+        // 包装注入可能在 postApply 之后才写入调用；这里只检查处理器存在性。
+        // 延迟阶段缺少调用不等于功能停用，不能据此提前输出失效警告。
+        if (targetClass.methods.stream().anyMatch(method -> method.name.endsWith(suffix))) return;
+        System.err.println("twilight_dusk: optional hook handler missing: " + mixinClassName
                 + " in " + targetClassName + "; this feature is inactive for the target.");
     }
     /** 查找移动处理调用，缺失时提示对应能力已降级，不阻止启动。 */
@@ -83,6 +90,8 @@ public class ArrowMixinAuditPlugin implements IMixinConfigPlugin {
                 }
             }
         }
+        // 延迟注入尚未完成时不能将缺少调用误报为功能停用。
+        if (targetClass.methods.stream().anyMatch(method -> method.name.endsWith(suffix))) return;
         System.err.println("twilight_dusk: optional spear movement hook missing: " + suffix
                 + " in " + targetClass.name + "; this movement feature is inactive.");
     }

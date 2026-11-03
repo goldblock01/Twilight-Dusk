@@ -9,7 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 
 /**
  * 让权杖在物品栏里可以「2D 图标、3D 模型」分开配置。
@@ -29,10 +30,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * 用的是 {@code ScepterRetextureEvents} 挂进槽位的那份模型（由
  * {@code scepter_3d_world} 决定），两边互不干扰。</p>
  *
- * <p>🔴 为什么用 {@code @Redirect} 而不是 {@code @ModifyVariable}：原版类不带局部变量表
- * （LVT），{@code @ModifyVariable(at = STORE)} 按类型找不到变量，
- * 会以 {@code failed injection check, (0/1)} 在启动阶段崩掉。{@code @Redirect}
- * 只依赖方法调用指令，不依赖 LVT。</p>
+ * <p>包装模型查询调用，先执行已有处理链，再选择本物品的 GUI 模型；不依赖局部变量表。</p>
  */
 @Mixin(GuiGraphics.class)
 public abstract class GuiGraphicsMixin {
@@ -42,10 +40,11 @@ public abstract class GuiGraphicsMixin {
      *
      * <p>目标方法（1.20.1 原版私有方法）：
      * {@code renderItem(LivingEntity, Level, ItemStack, x, y, seed, zOffset)}。
-     * 被重定向的调用：
+     * 被包装的调用：
      * {@code ItemRenderer#getModel(ItemStack, Level, LivingEntity, int)}。</p>
      */
-    @Redirect(
+    @WrapOperation(
+            require = 0,
             method = "renderItem(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;"
                     + "Lnet/minecraft/world/item/ItemStack;IIII)V",
             at = @At(
@@ -56,7 +55,7 @@ public abstract class GuiGraphicsMixin {
                             + "Lnet/minecraft/world/entity/LivingEntity;"
                             + "I)Lnet/minecraft/client/resources/model/BakedModel;"))
     private BakedModel twilight_dusk$guiModel(ItemRenderer renderer, ItemStack stack, Level level,
-                                              LivingEntity entity, int seed) {
-        return ScepterModels.guiModel(stack, renderer.getModel(stack, level, entity, seed));
+                                              LivingEntity entity, int seed, Operation<BakedModel> original) {
+        return ScepterModels.guiModel(stack, original.call(renderer, stack, level, entity, seed));
     }
 }

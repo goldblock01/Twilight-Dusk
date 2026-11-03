@@ -28,15 +28,25 @@ public final class TowerFlaskLootEvents {
     public static void onLootTableLoad(LootTableLoadEvent event) {
         if (!TOWER_ROOM.equals(event.getName())) return;
         JsonObject table = GSON.toJsonTree(event.getTable()).getAsJsonObject();
+        // 其他数据修改可能移除原池；结构不匹配时退让，不阻断战利品加载。
+        if (!table.has("pools") || !table.get("pools").isJsonArray()) {
+            TwilightDusk.LOGGER.warn("No pools in {}: flask entries were not added", TOWER_ROOM);
+            return;
+        }
         // 按内容定位药水池，保留表中其他奖励、条件与抽取次数。
         for (var element : table.getAsJsonArray("pools")) {
-            JsonArray entries = element.getAsJsonObject().getAsJsonArray("entries");
+            if (!element.isJsonObject()) continue;
+            JsonObject poolJson = element.getAsJsonObject();
+            if (!poolJson.has("entries") || !poolJson.get("entries").isJsonArray()) continue;
+            JsonArray entries = poolJson.getAsJsonArray("entries");
             int potions = 0;
             boolean sword = false;
             boolean hasFlasks = false;
             for (var entry : entries) {
+                if (!entry.isJsonObject()) continue;
                 JsonObject item = entry.getAsJsonObject();
-                if (!item.has("name")) continue;
+                if (!item.has("name") || !item.get("name").isJsonPrimitive()
+                        || !item.get("name").getAsJsonPrimitive().isString()) continue;
                 String name = item.get("name").getAsString();
                 if (name.equals("minecraft:potion")) potions++;
                 if (name.equals("minecraft:golden_sword")) sword = true;
@@ -45,8 +55,13 @@ public final class TowerFlaskLootEvents {
             if (potions < 4 || !sword) continue;
             if (hasFlasks) return;
             // 空瓶与同池的普通药水分别使用相同权重。
-            LootPool pool = event.getTable().getPool(element.getAsJsonObject().get("name").getAsString());
-            LootPoolEntriesAccessor access = (LootPoolEntriesAccessor) pool;
+            if (!poolJson.has("name") || !poolJson.get("name").isJsonPrimitive()
+                    || !poolJson.get("name").getAsJsonPrimitive().isString()) continue;
+            LootPool pool = event.getTable().getPool(poolJson.get("name").getAsString());
+            if (!(pool instanceof LootPoolEntriesAccessor access)) {
+                TwilightDusk.LOGGER.warn("Potion pool unavailable in {}: flask entries were not added", TOWER_ROOM);
+                return;
+            }
             LootPoolEntryContainer[] current = access.twilight_dusk$getEntries();
             LootPoolEntryContainer[] extended = Arrays.copyOf(current, current.length + 2);
             extended[current.length] = LootItem.lootTableItem(TFItems.BRITTLE_FLASK.get()).setWeight(1).build();
