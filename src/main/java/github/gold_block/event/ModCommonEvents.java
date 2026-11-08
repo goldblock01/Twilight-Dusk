@@ -2,6 +2,7 @@ package github.gold_block.event;
 
 import github.gold_block.TwilightDusk;
 import github.gold_block.entity.DuskFrog;
+import github.gold_block.entity.GoblinDruid;
 import github.gold_block.entity.SunsetElf;
 import github.gold_block.entity.TowerSpirit;
 import net.minecraft.world.entity.animal.allay.Allay;
@@ -23,6 +24,7 @@ public class ModCommonEvents {
 
     @SubscribeEvent
     public static void onRegisterAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.GOBLIN_DRUID.get(), GoblinDruid.createAttributes().build());
         event.put(ModEntities.TOWER_SPIRIT.get(), TowerSpirit.createAttributes().build());
         event.put(ModEntities.SUNSET_ELF.get(), Allay.createAttributes().build());
         event.put(ModEntities.DUSK_FROG.get(), Frog.createAttributes().build());
@@ -32,6 +34,9 @@ public class ModCommonEvents {
 
     @SubscribeEvent
     public static void onRegisterSpawnPlacements(SpawnPlacementRegisterEvent event) {
+        event.register(ModEntities.GOBLIN_DRUID.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, GoblinDruid::checkDruidSpawnRules,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.SUNSET_ELF.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SunsetElf::checkSunsetElfSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.REPLACE);

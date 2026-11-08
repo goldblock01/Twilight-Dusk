@@ -28,11 +28,15 @@ public class ModClientEvents {
 
     @SubscribeEvent
     public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(GoblinDruidRenderer.LAYER, GoblinDruidModel::createBodyLayer);
         event.registerLayerDefinition(TowerSpiritRenderer.LAYER, TowerSpiritModel::createBodyLayer);
+        event.registerLayerDefinition(TowerSpiritRenderer.BABY_LAYER, TowerSpiritModel::createBabyBodyLayer);
+        event.registerLayerDefinition(SpiritHarnessLayer.LAYER, SpiritHarnessLayer::createLayer);
     }
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.GOBLIN_DRUID.get(), GoblinDruidRenderer::new);
         event.registerEntityRenderer(ModEntities.TOWER_SPIRIT.get(), TowerSpiritRenderer::new);
         event.registerEntityRenderer(ModEntities.SUNSET_ELF.get(), SunsetElfRenderer::new);
         event.registerEntityRenderer(ModEntities.DUSK_FROG.get(), FrogRenderer::new);

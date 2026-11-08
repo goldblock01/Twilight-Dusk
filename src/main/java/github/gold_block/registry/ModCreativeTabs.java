@@ -55,7 +55,10 @@ public class ModCreativeTabs {
                 output.accept(TFBlocks.KEEPSAKE_CASKET.get().asItem());
                 output.accept(TFItems.BRITTLE_FLASK.get());
                 output.accept(TFItems.GREATER_FLASK.get());
+                output.accept(ModItems.GOBLIN_DRUID_SPAWN_EGG.get());
                 output.accept(ModItems.TOWER_SPIRIT_SPAWN_EGG.get());
+                output.accept(ModItems.DRIED_TOWER_SPIRIT.get());
+                ModItems.SPIRIT_HARNESSES.values().forEach(harness -> output.accept(harness.get()));
                 output.accept(ModItems.SUNSET_ELF_SPAWN_EGG.get());
                 output.accept(ModItems.DUSK_FROG_SPAWN_EGG.get());
                 output.accept(ModItems.DUSK_FROGSPAWN.get());

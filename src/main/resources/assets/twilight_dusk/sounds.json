@@ -74,5 +74,130 @@
       "twilight_dusk:entity/tower_spirit/death"
     ],
     "subtitle": "subtitles.twilight_dusk.tower_spirit.death"
+  },
+  "tower_ghastling_ambient": {
+    "subtitle": "subtitles.twilight_dusk.tower_ghastling_ambient",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/ghastling1",
+      "twilight_dusk:entity/tower_spirit/ghastling2",
+      "twilight_dusk:entity/tower_spirit/ghastling3",
+      "twilight_dusk:entity/tower_spirit/ghastling4",
+      "twilight_dusk:entity/tower_spirit/ghastling5",
+      "twilight_dusk:entity/tower_spirit/ghastling6",
+      "twilight_dusk:entity/tower_spirit/ghastling7"
+    ]
+  },
+  "tower_ghastling_hurt": {
+    "subtitle": "subtitles.twilight_dusk.tower_ghastling_hurt",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/baby_hurt1",
+      "twilight_dusk:entity/tower_spirit/baby_hurt2",
+      "twilight_dusk:entity/tower_spirit/baby_hurt3",
+      "twilight_dusk:entity/tower_spirit/baby_hurt4",
+      "twilight_dusk:entity/tower_spirit/baby_hurt5"
+    ]
+  },
+  "tower_ghastling_death": {
+    "subtitle": "subtitles.twilight_dusk.tower_ghastling_death",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/baby_death"
+    ]
+  },
+  "tower_spirit_harness_equip": {
+    "subtitle": "subtitles.twilight_dusk.tower_spirit_harness_equip",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/harness_equip"
+    ]
+  },
+  "tower_spirit_harness_unequip": {
+    "subtitle": "subtitles.twilight_dusk.tower_spirit_harness_unequip",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/harness_unequip"
+    ]
+  },
+  "tower_spirit_goggles_up": {
+    "subtitle": "subtitles.twilight_dusk.tower_spirit_goggles_up",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/goggles_up"
+    ]
+  },
+  "tower_spirit_goggles_down": {
+    "subtitle": "subtitles.twilight_dusk.tower_spirit_goggles_down",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/goggles_down"
+    ]
+  },
+  "tower_ghastling_spawn": {
+    "subtitle": "subtitles.twilight_dusk.tower_ghastling_spawn",
+    "sounds": [
+      "twilight_dusk:entity/tower_spirit/spawn"
+    ]
+  },
+  "block.dried_ghast.ambient": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/ambient1",
+      "twilight_dusk:block/dried_ghast/ambient2",
+      "twilight_dusk:block/dried_ghast/ambient3",
+      "twilight_dusk:block/dried_ghast/ambient4"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.ambient"
+  },
+  "block.dried_ghast.ambient_water": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/ambient_water1",
+      "twilight_dusk:block/dried_ghast/ambient_water2"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.ambient_water"
+  },
+  "block.dried_ghast.break": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/break"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.break"
+  },
+  "block.dried_ghast.fall": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/step1",
+      "twilight_dusk:block/dried_ghast/step2",
+      "twilight_dusk:block/dried_ghast/step3",
+      "twilight_dusk:block/dried_ghast/step4",
+      "twilight_dusk:block/dried_ghast/step5",
+      "twilight_dusk:block/dried_ghast/step6"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.fall"
+  },
+  "block.dried_ghast.place": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/place1",
+      "twilight_dusk:block/dried_ghast/place2",
+      "twilight_dusk:block/dried_ghast/place3",
+      "twilight_dusk:block/dried_ghast/place4",
+      "twilight_dusk:block/dried_ghast/place5",
+      "twilight_dusk:block/dried_ghast/place6"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.place"
+  },
+  "block.dried_ghast.place_in_water": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/placeinwater"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.place_in_water"
+  },
+  "block.dried_ghast.step": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/step1",
+      "twilight_dusk:block/dried_ghast/step2",
+      "twilight_dusk:block/dried_ghast/step3",
+      "twilight_dusk:block/dried_ghast/step4",
+      "twilight_dusk:block/dried_ghast/step5",
+      "twilight_dusk:block/dried_ghast/step6"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.step"
+  },
+  "block.dried_ghast.transition": {
+    "sounds": [
+      "twilight_dusk:block/dried_ghast/transition"
+    ],
+    "subtitle": "subtitles.twilight_dusk.block.dried_ghast.transition"
   }
 }

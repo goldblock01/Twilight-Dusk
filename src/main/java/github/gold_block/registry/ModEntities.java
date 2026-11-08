@@ -2,6 +2,7 @@ package github.gold_block.registry;
 
 import github.gold_block.TwilightDusk;
 import github.gold_block.entity.BurstBolt;
+import github.gold_block.entity.GoblinDruid;
 import github.gold_block.entity.KnightArrow;
 import github.gold_block.entity.PhantomKnightArrow;
 import github.gold_block.entity.DuskFrog;
@@ -29,6 +30,10 @@ public class ModEntities {
             DeferredRegister.create(Registries.FROG_VARIANT, TwilightDusk.MODID);
     public static final DeferredRegister<SensorType<?>> SENSORS =
             DeferredRegister.create(ForgeRegistries.SENSOR_TYPES, TwilightDusk.MODID);
+
+    public static final RegistryObject<EntityType<GoblinDruid>> GOBLIN_DRUID = ENTITY_TYPES.register("goblin_druid",
+            () -> EntityType.Builder.of(GoblinDruid::new, MobCategory.MONSTER)
+                    .sized(0.75F, 1.375F).clientTrackingRange(8).build("goblin_druid"));
 
     public static final RegistryObject<EntityType<TowerSpirit>> TOWER_SPIRIT = ENTITY_TYPES.register("tower_spirit",
             () -> EntityType.Builder.of(TowerSpirit::new, MobCategory.CREATURE)

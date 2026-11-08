@@ -1,0 +1,13 @@
+{
+  "parent": "twilight_dusk:block/dried_tower_spirit",
+  "textures": {
+    "bottom": "twilight_dusk:block/dried_ghast_hydration_2_bottom",
+    "east": "twilight_dusk:block/dried_ghast_hydration_2_east",
+    "north": "twilight_dusk:block/dried_ghast_hydration_2_north",
+    "particle": "twilight_dusk:block/dried_ghast_hydration_2_north",
+    "south": "twilight_dusk:block/dried_ghast_hydration_2_south",
+    "tentacles": "twilight_dusk:block/dried_ghast_hydration_2_tentacles",
+    "top": "twilight_dusk:block/dried_ghast_hydration_2_top",
+    "west": "twilight_dusk:block/dried_ghast_hydration_2_west"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_wool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:gray_wool"
+            ]
+          }
+        ]
+      }
+    },
+    "has_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "twilight_dusk:gray_harness"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wool",
+      "has_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilight_dusk:gray_harness"
+    ]
+  }
+}

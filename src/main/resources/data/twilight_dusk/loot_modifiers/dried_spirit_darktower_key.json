@@ -1,0 +1,15 @@
+{
+  "type": "twilight_dusk:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:chests/darktower_key"
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.05
+    }
+  ],
+  "item": "twilight_dusk:dried_tower_spirit",
+  "count": 1
+}

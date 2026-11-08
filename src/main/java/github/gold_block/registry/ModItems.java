@@ -6,15 +6,16 @@ import github.gold_block.item.FieryAxeItem;
 import github.gold_block.item.FieryScytheItem;
 import github.gold_block.item.FieryShovelItem;
 import github.gold_block.item.FrostyPickItem;
-import github.gold_block.item.NagaCurvedSwordItem;
-import github.gold_block.item.KnightHammerItem;
 import github.gold_block.item.KnightArrowItem;
+import github.gold_block.item.KnightHammerItem;
 import github.gold_block.item.KnightSpearItem;
-import github.gold_block.item.PhantomKnightSpearItem;
 import github.gold_block.item.MagicSwordItem;
+import github.gold_block.item.NagaCurvedSwordItem;
 import github.gold_block.item.PhantomAxeItem;
+import github.gold_block.item.PhantomKnightSpearItem;
 import github.gold_block.item.PhantomPickaxeItem;
 import github.gold_block.item.PhantomSwordItem;
+import github.gold_block.item.SpiritHarnessItem;
 import github.gold_block.item.TimeWatchItem;
 import github.gold_block.item.TowerDestroyerItem;
 import github.gold_block.item.medal.BlazingMedalItem;
@@ -24,14 +25,19 @@ import github.gold_block.item.medal.MedalItem;
 import github.gold_block.item.medal.TwilightMedalItem;
 import github.gold_block.util.FieryTier;
 import github.gold_block.util.PhantomTier;
-import net.minecraftforge.common.ForgeSpawnEggItem;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.Map;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.MobBucketItem;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -89,6 +95,19 @@ public class ModItems {
     public static final RegistryObject<Item> DUSK_TADPOLE_BUCKET = ITEMS.register("dusk_tadpole_bucket",
             () -> new MobBucketItem(() -> ModEntities.DUSK_TADPOLE.get(), () -> Fluids.WATER,
                     () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1)));
+
+    public static final Map<DyeColor, RegistryObject<Item>> SPIRIT_HARNESSES = registerSpiritHarnesses();
+    private static Map<DyeColor, RegistryObject<Item>> registerSpiritHarnesses() {
+        var harnesses = new EnumMap<DyeColor, RegistryObject<Item>>(DyeColor.class);
+        for (var color : DyeColor.values()) harnesses.put(color,
+                ITEMS.register(color.getName() + "_harness", () -> new SpiritHarnessItem(color, new Item.Properties().stacksTo(1))));
+        return Collections.unmodifiableMap(harnesses);
+    }
+    public static final RegistryObject<Item> DRIED_TOWER_SPIRIT = ITEMS.register("dried_tower_spirit",
+            () -> new BlockItem(ModBlocks.DRIED_TOWER_SPIRIT.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> GOBLIN_DRUID_SPAWN_EGG = ITEMS.register("goblin_druid_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GOBLIN_DRUID, 0x405124, 0x798047, new Item.Properties()));
 
     public static final RegistryObject<Item> TOWER_SPIRIT_SPAWN_EGG = ITEMS.register("tower_spirit_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.TOWER_SPIRIT, 0xFFF0E9, 0xE66F68, new Item.Properties()));

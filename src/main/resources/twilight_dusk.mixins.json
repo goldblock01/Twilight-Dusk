@@ -27,7 +27,8 @@
     "SpearKnockbackMixin",
     "LichEquipmentSlotMixin",
     "LichEquipmentMixin",
-    "LootPoolEntriesAccessor"
+    "LootPoolEntriesAccessor",
+    "TowerSpiritPrecisePositionMixin"
   ],
   "client": [
     "GuiGraphicsMixin",
@@ -38,7 +39,8 @@
     "MinecraftSpearAttackMixin",
     "SpearHandRenderMixin",
     "SpearThirdPersonItemMixin",
-    "SpearPickMixin"
+    "SpearPickMixin",
+    "TowerSpiritCameraMixin"
   ],
   "injectors": {
     "defaultRequire": 1

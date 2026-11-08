@@ -37,6 +37,7 @@ public class TwilightDusk {
         ModCreativeTabs.TABS.register(modEventBus);
         ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+        github.gold_block.registry.ModSpiritRecipes.SERIALIZERS.register(modEventBus);
         ModStructurePlacements.STRUCTURE_PLACEMENTS.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
